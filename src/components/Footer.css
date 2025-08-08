@@ -1,0 +1,73 @@
+.footer {
+  background: linear-gradient(135deg, #003d6a 0%, #5aa4e4 100%);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* 左侧三张图片横向排列 */
+.footer-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-logo-img {
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* 右侧链接按钮 */
+.footer-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-link {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.footer-link:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 中间底部声明 */
+.footer-bottom-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.footer-bottom-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between; /* 左右分布 */
+  align-items: center;
+  flex-wrap: wrap; /* 窄屏自动换行 */
+}
+
+.footer-creator {
+  font-style: italic;
+}

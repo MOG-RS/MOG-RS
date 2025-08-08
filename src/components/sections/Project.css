@@ -1,0 +1,104 @@
+
+.project-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  flex: 1;
+  padding: 1rem;
+  max-width: 500px;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.project-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.ev-links {
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+/* 统一所有链接颜色，包括 PDF 按钮 */
+.ev-links a,
+.pdf-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ev-links a:hover,
+.pdf-link:hover {
+  color: #003d6a;
+}
+
+/* PDF 链接的额外样式（如果需要按钮效果，可以保留背景色） */
+.pdf-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-decoration: underline;
+  background: none; /* 去掉原按钮背景，保持和文献链接一致 */
+  padding: 0;
+  border-radius: 0;
+}
+/* 展开/收起按钮样式 */
+.toggle-links-btn {
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  color: #0066cc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.toggle-links-btn:hover { color: #003d6a; }
+
+/* 让 ev-links 与 pdf-link 颜色一致 */
+.ev-links a,
+.pdf-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.ev-links a:hover,
+.pdf-link:hover {
+  color: #003d6a;
+}
+
+.project-image.carousel {
+  flex: 1;
+  max-width: 500px;
+}
+
+.project-image.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* slick 圆点配色 */
+.slick-dots li button:before {
+  color: #0066cc;
+  font-size: 10px;
+}
+.slick-dots li.slick-active button:before {
+  color: #003d6a;
+}

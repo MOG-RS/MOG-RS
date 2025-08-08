@@ -1,0 +1,44 @@
+.contact-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.contact-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-info-box {
+  margin-top: 1.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-box p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info-box a {
+  color: #05448b;
+  text-decoration: none;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #5aa4e4 0%, #007bba 100%);
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #c1272d;
+}
