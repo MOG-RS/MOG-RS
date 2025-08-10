@@ -4,6 +4,13 @@
 
 
 // import React, { useState } from 'react';
+// import Slider from 'react-slick';
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+
+// import Lightbox from 'react-image-lightbox';
+// import 'react-image-lightbox/style.css';
+
 // import './Project.css';
 // import MogADev from '../../asset/MogADev.png';
 // import EEcell from '../../asset/EEcell.jpeg';
@@ -11,8 +18,11 @@
 
 // export default function Project({ t }) {
 //   const [showAllLinks, setShowAllLinks] = useState(false);
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [photoIndex, setPhotoIndex] = useState(0);
 
-//   // 6 个链接（PDF 放第一）
+//   const images = [EEcell, extracellunarVersicle];
+
 //   const evLinks = [
 //     {
 //       href: '/docs/ijms.pdf',
@@ -42,6 +52,16 @@
 
 //   const displayedLinks = showAllLinks ? evLinks : evLinks.slice(0, 3);
 
+//   const sliderSettings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 1000,
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//     slidesToShow: 1,
+//     slidesToScroll: 1
+//   };
+
 //   return (
 //     <section className="section active">
 //       <h2 className="section-title serif">{t('project-title')}</h2>
@@ -59,10 +79,36 @@
 
 //       {/* EV Biomarker Study Section */}
 //       <div className="project-section">
-//         <div className="project-image">
-//           <img src={EEcell} alt="Extracellular Vesicles Study" />
-//           <img src={extracellunarVersicle} alt="Extracellular Vesicles Process" />
+//         <div className="project-image carousel">
+//           <Slider {...sliderSettings}>
+//             {images.map((src, idx) => (
+//               <div key={idx}>
+//                 <img
+//                   src={src}
+//                   alt={`Slide ${idx + 1}`}
+//                   onClick={() => { setIsOpen(true); setPhotoIndex(idx); }}
+//                   style={{ cursor: 'pointer' }}
+//                 />
+//               </div>
+//             ))}
+//           </Slider>
+
+//           {isOpen && (
+//             <Lightbox
+//               mainSrc={images[photoIndex]}
+//               nextSrc={images[(photoIndex + 1) % images.length]}
+//               prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+//               onCloseRequest={() => setIsOpen(false)}
+//               onMovePrevRequest={() =>
+//                 setPhotoIndex((photoIndex + images.length - 1) % images.length)
+//               }
+//               onMoveNextRequest={() =>
+//                 setPhotoIndex((photoIndex + 1) % images.length)
+//               }
+//             />
+//           )}
 //         </div>
+
 //         <div className="project-text">
 //           <h3 className="subsection-title serif">{t('project-ev-title')}</h3>
 //           <p>{t('project-ev-text')}</p>
@@ -103,8 +149,9 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+// ✅ 新的 Lightbox 库（兼容 React 18/19）
+import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'yet-another-react-lightbox';
 
 import './Project.css';
 import MogADev from '../../asset/MogADev.png';
@@ -113,6 +160,8 @@ import extracellunarVersicle from '../../asset/extracellunarVersicle.jpeg';
 
 export default function Project({ t }) {
   const [showAllLinks, setShowAllLinks] = useState(false);
+
+  // 控制大图预览
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -188,20 +237,13 @@ export default function Project({ t }) {
             ))}
           </Slider>
 
-          {isOpen && (
-            <Lightbox
-              mainSrc={images[photoIndex]}
-              nextSrc={images[(photoIndex + 1) % images.length]}
-              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-              onCloseRequest={() => setIsOpen(false)}
-              onMovePrevRequest={() =>
-                setPhotoIndex((photoIndex + images.length - 1) % images.length)
-              }
-              onMoveNextRequest={() =>
-                setPhotoIndex((photoIndex + 1) % images.length)
-              }
-            />
-          )}
+          {/* ✅ 新库用法：open/close/index + slides */}
+          <Lightbox
+            open={isOpen}
+            close={() => setIsOpen(false)}
+            index={photoIndex}
+            slides={images.map(src => ({ src }))}
+          />
         </div>
 
         <div className="project-text">
@@ -238,4 +280,3 @@ export default function Project({ t }) {
     </section>
   );
 }
-

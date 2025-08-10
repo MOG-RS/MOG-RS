@@ -1,7 +1,17 @@
 node_modules/
 build/
 .DS_Store
-*.png
-*.jpeg
-*.jpg
-*.pdf
+# *.png
+# *.jpeg
+# *.jpg
+# *.pdf
+
+# editor history
+.history
+node_modules
+build
+.vercel
+.DS_Store
+
+# editor history
+.history
