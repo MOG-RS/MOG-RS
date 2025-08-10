@@ -5,3 +5,10 @@ build/
 # *.jpeg
 # *.jpg
 # *.pdf
+
+# editor history
+.history
+node_modules
+build
+.vercel
+.DS_Store
