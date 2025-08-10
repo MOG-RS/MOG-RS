@@ -7,11 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 import About from './components/sections/About';
-// import Biomarker from './components/sections/Biomarker';
-import Network from './components/sections/Network';
-// import Team from './components/sections/Team';
-// import Partner from './components/sections/Partner';
-// import Support from './components/sections/Support';
+
 import Contact from './components/sections/Contact';
 import Home from './components/sections/Home';
 import Project from './components/sections/Project';
