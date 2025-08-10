@@ -64,3 +64,50 @@
       right: 0;
     }
   }
+  .nav-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.nav-link:focus-visible {
+  outline: 2px solid #000; /* 自定可访问性样式 */
+  outline-offset: 2px;
+}
+/* 让每个项稍大一点、点按更舒服 */
+.nav-link {
+  /* 如果你之前把 <a> 换成 <button>，这几行能去掉默认按钮样式 */
+  background: none;
+  border: 0;
+  appearance: none;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;          /* 图标与文字间距 */
+  font-size: 1.06rem;   /* 文字稍微变大（原来一般是 1rem） */
+  padding: 0.65rem 0.9rem;
+  line-height: 1.1;
+  cursor: pointer;
+  min-height: 44px;     /* 确保触控目标建议尺寸(可访问性) */
+}
+
+.nav-item i {
+  font-size: 1.2em;     /* 图标比文字稍大，视觉更清晰 */
+}
+
+/* 导航项之间留一点空隙（桌面端） */
+.nav-menu .nav-item {
+  margin: 0 0.25rem;
+}
+
+/* 移动端适配：再稍大一点，方便手指点 */
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 1.08rem;
+    padding: 0.75rem 1rem;
+    min-height: 48px;
+  }
+  .nav-item i {
+    font-size: 1.25em;
+  }
+}
