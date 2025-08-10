@@ -1,17 +1,25 @@
+# dependencies
 node_modules/
+
+# production build
 build/
-.DS_Store
-# *.png
-# *.jpeg
-# *.jpg
-# *.pdf
 
-# editor history
-.history
-node_modules
-build
-.vercel
-.DS_Store
+# vercel local data
+.vercel/
 
-# editor history
-.history
+# env files
+.env*
+
+# logs & cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+coverage/
+
+# OS / editors
+.DS_Store
+.history/
+.vscode/
+.idea/
