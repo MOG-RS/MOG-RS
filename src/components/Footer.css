@@ -71,3 +71,31 @@
 .footer-creator {
   font-style: italic;
 }
+/* 原来的 footer-left 保持 wrap */
+.footer-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap; /* 允许换行 */
+}
+
+/* 针对小屏优化 */
+@media (max-width: 768px) {
+  .footer-top-row {
+    flex-direction: column; /* 垂直堆叠 */
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-left {
+    justify-content: center;
+    gap: 0.5rem; /* 缩小间距 */
+  }
+  .footer-logo-img {
+    height: 40px; /* LOGO 更小，防止溢出 */
+  }
+  .footer-right {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
