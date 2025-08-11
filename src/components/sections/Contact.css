@@ -42,3 +42,43 @@
 .contact-button:hover {
   background: #c1272d;
 }
+
+/* 中心对齐 + 统一排版 */
+.contact-info-box {
+  text-align: center;
+}
+
+.info-row {
+  margin: 0 0 1.25rem 0;
+}
+
+.info-title {
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0b3d6a;
+}
+
+.info-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* 邮箱独占一行并水平居中；长地址可换行 */
+.info-email {
+  display: inline-block;          /* 居中且不占满整行 */
+  font-size: 1.05rem;
+  color: #05448b;
+  text-decoration: none;
+  word-break: break-all;          /* 手机端长邮箱自动换行 */
+  line-height: 1.6;
+}
+.info-email:hover { text-decoration: underline; }
+
+/* 手机端稍微紧凑一点 */
+@media (max-width: 768px) {
+  .contact-info-box { padding: 1.25rem; }
+  .info-title { font-size: 1.05rem; }
+  .info-email, .info-name { font-size: 1rem; }
+}

@@ -3,7 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- 只保留一条 viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome（给 Nav 里的图标用） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- 统一浅色主题 -->
     <meta name="color-scheme" content="light" />
@@ -18,15 +27,12 @@
 
     <title>MOG-RS Network</title>
 
-    <!-- 强制页面背景为白色，避免不同浏览器深色渲染差异 -->
+    <!-- 全局基础样式 -->
     <style>
       :root { color-scheme: light; }
-      html, body {
-        background-color: #ffffff;
-        color: #111;            /* 适配白底的文字色 */
-        margin: 0;
-        padding: 0;
-      }
+      html, body { background:#fff; color:#111; margin:0; padding:0; }
+      html { scroll-behavior: smooth; } /* 点击锚点平滑滚动 */
+      img, video { max-width:100%; height:auto; display:block; } /* 图片自适应 */
     </style>
   </head>
   <body>

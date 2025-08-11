@@ -1,7 +1,4 @@
-/* .about-section {
-
-
-/* ====== 基础与主题变量 ====== */
+/* ====== 基础与主题变量（作用于页面） ====== */
 :root {
   --max-w: 900px;
   --radius: 12px;
@@ -25,34 +22,38 @@
   --border: #e6ebf2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e1116;
-    --bg-subtle: #151a22;
-    --text: #e6e6e6;
-    --text-muted: #b5bdc5;
-    --brand: #6bb4f2;
-    --brand-ink: #9dd1ff;
-    --accent: #0f2236;
-    --border: #222a36;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5);
-    --shadow-md: 0 6px 18px rgba(0,0,0,0.5);
-  }
-}
-
 /* 减少动态偏好 */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
 
-/* ====== About 区块 ====== */
+/* ====== About 区块（容器） ====== */
 .about-section {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: clamp(1.25rem, 2vw + 0.5rem, 3rem) 1rem;
   background: var(--bg);
+  color: var(--text);
 }
 
+/* Firefox 黑屏常见原因兜底：禁用混合/遮罩/模糊 */
+.about-section,
+.about-section * {
+  mix-blend-mode: normal !important;
+  background-blend-mode: normal !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  backdrop-filter: none !important; /* 如需半透明，用 rgba 覆盖层 */
+}
+
+/* 图片自适应 */
+.about-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 单个信息块 */
 .about-block {
   position: relative;
   margin-block: var(--space-4);
@@ -64,7 +65,7 @@
   transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
 }
 
-/* 左侧强调条，使用渐变更精致 */
+/* 左侧强调条（纯色/渐变，避免滤镜） */
 .about-block::before {
   content: "";
   position: absolute;
@@ -80,7 +81,7 @@
   transform: translateY(-2px);
 }
 
-/* ====== 标题与文字 ====== */
+/* 标题与文本 */
 .block-title {
   font-family: "Merriweather", ui-serif, Georgia, serif;
   font-size: clamp(1.25rem, 1.2rem + 0.6vw, 1.75rem);
@@ -105,24 +106,19 @@
   margin: 0;
 }
 
-/* 段落间距控制（只在相邻文本之间生效） */
-.block-text + .block-text {
-  margin-top: var(--space-2);
-}
+.block-text + .block-text { margin-top: var(--space-2); }
 
-/* ====== 响应式布局（可选，把多个块做成两列） ====== */
+/* 响应式两列 */
 @media (min-width: 860px) {
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
   }
-  .about-grid .about-block {
-    margin-block: 0;
-  }
+  .about-grid .about-block { margin-block: 0; }
 }
 
-/* ====== 在浅色下更柔和的阴影与悬浮色 ====== */
+/* 浅色下的悬浮微调 */
 @media (prefers-color-scheme: light) {
   .about-block:hover,
   .about-block:focus-within {
@@ -130,7 +126,7 @@
   }
 }
 
-/* ====== 链接与可访问性 ====== */
+/* 链接样式 */
 .about-block a {
   color: var(--brand);
   text-underline-offset: 3px;
@@ -143,7 +139,7 @@
   outline: none;
 }
 
-/* ====== 紧凑模式（需要时给容器加 .compact） ====== */
+/* 紧凑模式（可选） */
 .compact .about-block {
   padding: var(--space-4);
   margin-block: var(--space-3);

@@ -102,3 +102,33 @@
 .slick-dots li.slick-active button:before {
   color: #003d6a;
 }
+/* ==== Mobile 优化：统一先图后文，取消图片500px限制，铺满屏 ==== */
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;        /* 单列 */
+    align-items: stretch;
+    margin-bottom: 2rem;
+  }
+
+  /* 无论有没有 .reverse-layout，手机端都先显示图片 */
+  .project-image,
+  .project-image.carousel {
+    order: -1;                     /* 关键：图片排到前面 */
+    max-width: 100%;               /* 取消 500px 限制 */
+    width: 100%;
+    padding: 0;                    /* 去掉左右内边距，图更大 */
+    margin: 0 0 12px 0;            /* 图与文字间距 */
+  }
+
+  .project-image img,
+  .project-image.carousel img {
+    width: 100%;
+    height: auto;                  /* 自适应高度 */
+    object-fit: cover;             /* 若将来你给固定高，不会变形 */
+    border-radius: 8px;
+  }
+
+  .project-text {
+    padding: 0 0.5rem;             /* 移动端左右少量留白 */
+  }
+}

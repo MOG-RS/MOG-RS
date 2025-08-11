@@ -1,113 +1,64 @@
-/* Nav */
-.nav-container {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0.5rem 0;
-  }
-  .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  .main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  .nav-menu {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 1rem;
-  }
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-  }
-  .nav-link.active,
-  .nav-link:hover {
-    background-color: #eaf4ff;
-    color: #003d6a;
-  }
-  .mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    .nav-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background: #fff;
-      padding: 1rem;
-      border: 1px solid #ccc;
-    }
-    .nav-menu.active {
-      display: flex;
-    }
-    .mobile-menu-btn {
-      display: block;
-      position: absolute;
-      right: 0;
-    }
-  }
-  .nav-link {
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-.nav-link:focus-visible {
-  outline: 2px solid #000; /* 自定可访问性样式 */
-  outline-offset: 2px;
-}
-/* 让每个项稍大一点、点按更舒服 */
-.nav-link {
-  /* 如果你之前把 <a> 换成 <button>，这几行能去掉默认按钮样式 */
-  background: none;
-  border: 0;
-  appearance: none;
+/* ===== NavBar.css（居中 + 移动端抽屉） ===== */
 
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;          /* 图标与文字间距 */
-  font-size: 1.06rem;   /* 文字稍微变大（原来一般是 1rem） */
-  padding: 0.65rem 0.9rem;
-  line-height: 1.1;
-  cursor: pointer;
-  min-height: 44px;     /* 确保触控目标建议尺寸(可访问性) */
+:root { --nav-h: 56px; }
+
+/* 顶栏背景同 Header 渐变 */
+.nav-container{
+  position: sticky; top:0; z-index:1200;
+  background: linear-gradient(135deg, #003d6a 0%, #5aa4e4 100%);
+  color:#fff; box-shadow:0 2px 8px rgba(0,0,0,.08);
+  padding-top: env(safe-area-inset-top);
+  width:100%;
 }
 
-.nav-item i {
-  font-size: 1.2em;     /* 图标比文字稍大，视觉更清晰 */
+/* 内容：居中排布 */
+.nav-content{
+  max-width:1120px; margin:0 auto; padding:10px 16px;
+  min-height:var(--nav-h);
+  display:flex; align-items:center; justify-content:center; /* 关键：整体居中 */
+  position:relative; /* 让汉堡按钮可绝对定位到右上角 */
 }
 
-/* 导航项之间留一点空隙（桌面端） */
-.nav-menu .nav-item {
-  margin: 0 0.25rem;
+/* 桌面菜单：水平居中 */
+.nav-menu{ margin:0; }
+.menu-list{
+  display:flex; justify-content:center; align-items:center;
+  gap:8px; list-style:none; margin:0; padding:0;
+}
+.menu-list, .menu-list * { list-style:none !important; }
+
+.nav-link{
+  display:flex; align-items:center; gap:6px;
+  padding:8px 12px; border-radius:8px; border:0; background:transparent;
+  color:#fff; font-size:14px; cursor:pointer;
+}
+.nav-link:hover{ background:rgba(255,255,255,.12); }
+.nav-link.active{ background:rgba(255,255,255,.24); }
+
+/* 手机端汉堡按钮：右上角 */
+.mobile-menu-btn{
+  position:absolute; right:16px; top:50%; transform:translateY(-50%);
+  border:0; background:transparent; color:#fff; font-size:22px; display:none;
 }
 
-/* 移动端适配：再稍大一点，方便手指点 */
-@media (max-width: 768px) {
-  .nav-link {
-    font-size: 1.08rem;
-    padding: 0.75rem 1rem;
-    min-height: 48px;
+/* —— 移动端：抽屉式菜单 —— */
+@media (max-width: 992px){
+  .mobile-menu-btn{ display:inline-flex; }
+
+  /* 抽屉覆盖整个视口（除去导航高度），列表纵向居中 */
+  .nav-menu{
+    position:fixed; inset:var(--nav-h) 0 0 0;
+    background:#0f4aa1;
+    transform:translateY(-8px); opacity:0; pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    display:flex; flex-direction:column; justify-content:flex-start;
+    padding:12px 16px 24px;
   }
-  .nav-item i {
-    font-size: 1.25em;
-  }
+  .nav-menu.active{ opacity:1; transform:translateY(0); pointer-events:auto; }
+
+  .menu-list{ display:grid; gap:8px; justify-items:center; }
 }
+
+/* 基础 */
+html, body{ margin:0; padding:0; }
+

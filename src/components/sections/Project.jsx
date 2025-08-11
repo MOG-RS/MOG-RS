@@ -2,9 +2,6 @@
  * src/components/sections/Project.jsx 
  */
 
-
-
-
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
@@ -31,7 +28,7 @@ export default function Project({ t }) {
   const evLinks = [
     {
       href: '/docs/ijms.pdf',
-      text: 'IJMS Article: L1CAM+ EVs as Biomarkers (PDF)',
+      text: 'In-Depth Characterization of L1CAM+ Extracellular Vesicles as Potential Biomarkers for Anti-CD20 Therapy Response in Relapsing–Remitting Multiple Sclerosis',
     },
     {
       href: 'https://www.neurology.org/doi/10.1212/NXI.0000000000200420',
