@@ -345,3 +345,10 @@ body {
   color: var(--dark-blue);
   font-style: italic;
 }
+
+
+/* 安卓会自动放大文本：手动关掉 */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* 偶发横向 1px 溢出：整体收住 */
+html, body { overflow-x: hidden; }

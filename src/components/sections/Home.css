@@ -1,8 +1,4 @@
-.home-slider {
-  position: relative;
-  height: 60vh;
-  overflow: hidden;
-}
+
 
 .slide {
   position: absolute;
@@ -30,16 +26,69 @@
   text-align: center;
 }
 
+
+
+/* 高度用 clamp 给点弹性，文字有更多空间 */
+.home-slider {
+  position: relative;
+  height: clamp(48vh, 60vh, 70vh);
+  overflow: hidden;
+}
+
+/* 保证标题盒子不会贴边，也更容易居中 */
+.slide-text {
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;          /* 避免遮罩挡到轮播触控（可选） */
+}
+
+@media (max-width: 480px) {
+  /* 小屏略向上提一点，避免被底部 UI 挡住（可按需要微调百分比） */
+  .slide-text {
+    top: 46%;
+    transform: translate(0%, -44%);
+  }
+}
+
+
+
+
+/* 标题：限制最大宽度 + 自适应字号 + 强制换行 */
 .slide-text h2 {
   font-family: 'Merriweather', serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景提高可读性 */
-  padding: 1.2rem 2rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: clamp(10px, 2vw, 18px) clamp(14px, 3vw, 28px);
   border-radius: 12px;
-  line-height: 1.4;
-  max-width: 90%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  line-height: 1.2;
+
+  /* 关键：不要让文本撑出盒子/图片 */
+  max-width: 88%;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+
+  /* 关键：用 clamp 控制大小，避免安卓放大过头 */
+  font-size: clamp(18px, 6vw, 40px);
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  transition: all .3s ease;
+  pointer-events: auto;          /* 若需要点击文本再打开 */
+}
+
+/* 小屏再保守一些 */
+@media (max-width: 480px) {
+  .slide-text { left: 4%; right: 4%; bottom: 10%; }
+  .slide-text h2 {
+    max-width: 92%;
+    font-size: clamp(16px, 5.2vw, 32px);
+    padding: 10px 14px;
+  }
 }

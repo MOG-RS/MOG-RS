@@ -8,6 +8,7 @@ const NavBar = ({ currentSection, setCurrentSection, mobileMenuOpen, setMobileMe
     { id: 'home',    icon: 'home' },
     { id: 'about',   icon: 'info-circle' },
     { id: 'project', icon: 'project-diagram' },
+    { id: 'join',    icon: 'user-plus' }, 
     { id: 'contact', icon: 'envelope' },
   ];
 

@@ -22,7 +22,11 @@ export const translations = {
     "contact": "Contact",
     "contact-title": "Contact",
     "contact-description": "If you have any questions or need support, feel free to contact us.",
-    "contact-button-text": "Contact Us"
+    "contact-button-text": "Contact Us",
+    "join": "Join Us",
+    "join-title": "Join MOG-RS",
+    "join-text": "If you are a healthcare professional or researcher interested in MOGAD, you can join our network of collaborating centers.",
+    "join-button": "Join the MOG-RS network",
 
   },
   es: {
@@ -49,6 +53,10 @@ export const translations = {
     "contact-title": "Contacto",
     "contact-description": "Si tiene alguna pregunta o necesita soporte, no dude en contactarnos.",
     "contact-button-text": "Contáctanos",
+    "join": "Unirse",
+    "join-title": "Únete a MOG-RS",
+    "join-text": "Si eres profesional sanitario o investigador con interés en MOGAD, puedes formar parte de nuestra red de centros colaboradores.",
+    "join-button": "Unirme a la red MOG-RS",
   },
   fr: {
     "footer-text": "Réseau européen de stratification des risques MOGAD.",
@@ -74,6 +82,10 @@ export const translations = {
     "contact-title": "Contact",
     "contact-description": "Si vous avez des questions ou besoin d'aide, n'hésitez pas à nous contacter.",
     "contact-button-text": "Nous contacter",
+    "join": "Rejoindre",
+    "join-title": "Rejoindre MOG-RS",
+    "join-text": "Si vous êtes un professionnel de santé ou un chercheur intéressé par la MOGAD, vous pouvez rejoindre notre réseau de centres collaborateurs.",
+    "join-button": "Rejoindre le réseau MOG-RS",
   },
   de: {
     
@@ -100,6 +112,10 @@ export const translations = {
     "contact-title": "Kontakt",
     "contact-description": "Wenn Sie Fragen haben oder Unterstützung benötigen, können Sie sich gerne an uns wenden.",
     "contact-button-text": "Kontakt",
+    "join": "Beitreten",
+    "join-title": "MOG-RS beitreten",
+    "join-text": "Wenn Sie ein Gesundheitsfachmann oder Forscher sind, der sich für MOGAD interessiert, können Sie unserem Netzwerk von Partnerzentren beitreten.",
+    "join-button": "Dem MOG-RS-Netzwerk beitreten",
 
   },
   it: {
@@ -126,7 +142,10 @@ export const translations = {
 "contact-title": "Contatti",
 "contact-description": "Se hai domande o hai bisogno di assistenza, non esitare a contattarci.",
 "contact-button-text": "Contattaci",
-
+"join": "Unisciti",
+"join-title": "Unisciti a MOG-RS",
+"join-text": "Se sei un professionista sanitario o un ricercatore interessato alla MOGAD, puoi entrare a far parte della nostra rete di centri collaboratori.",
+"join-button": "Unisciti alla rete MOG-RS",
 
 },
 };

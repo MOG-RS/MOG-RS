@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 import About from './components/sections/About';
-
+import Join from './components/sections/Join';
 import Contact from './components/sections/Contact';
 import Home from './components/sections/Home';
 import Project from './components/sections/Project';
@@ -39,7 +39,7 @@ function App() {
         {currentSection === 'home' && <Home t={t} />}
         {currentSection === 'about' && <About t={t} />}
         {currentSection === 'project' && <Project t={t} />}
-        {/* {currentSection === 'network' && <Network t={t} />} */}
+        {currentSection === 'join' && <Join t={t} />}
         {currentSection === 'contact' && <Contact t={t} />}
     </main>
 

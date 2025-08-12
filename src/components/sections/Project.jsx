@@ -61,7 +61,11 @@ export default function Project({ t }) {
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    // 轮播补2项修复出框
+    adaptiveHeight: true,        // 防止高度撑破容器
+    centerMode: false,           // 禁止中心模式（容易引入左右内边距）
+    variableWidth: false,
   };
 
   return (
