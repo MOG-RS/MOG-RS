@@ -1,4 +1,3 @@
-
 .project-section {
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@
   list-style: disc;
 }
 
-/* 统一所有链接颜色，包括 PDF 按钮 */
+/* 链接统一样式 */
 .ev-links a,
 .pdf-link {
   color: #0066cc;
@@ -47,16 +46,15 @@
   color: #003d6a;
 }
 
-/* PDF 链接的额外样式（如果需要按钮效果，可以保留背景色） */
 .pdf-link {
   display: inline-block;
   margin-top: 0.75rem;
   text-decoration: underline;
-  background: none; /* 去掉原按钮背景，保持和文献链接一致 */
+  background: none;
   padding: 0;
   border-radius: 0;
 }
-/* 展开/收起按钮样式 */
+
 .toggle-links-btn {
   margin-top: 0.5rem;
   background: none;
@@ -68,19 +66,6 @@
   text-decoration: underline;
 }
 .toggle-links-btn:hover { color: #003d6a; }
-
-/* 让 ev-links 与 pdf-link 颜色一致 */
-.ev-links a,
-.pdf-link {
-  color: #0066cc;
-  text-decoration: underline;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-.ev-links a:hover,
-.pdf-link:hover {
-  color: #003d6a;
-}
 
 .project-image.carousel {
   flex: 1;
@@ -102,57 +87,55 @@
 .slick-dots li.slick-active button:before {
   color: #003d6a;
 }
-/* ==== Mobile 优化：统一先图后文，取消图片500px限制，铺满屏 ==== */
+
+/* ==== Mobile 优化 ==== */
 @media (max-width: 768px) {
   .project-section {
-    flex-direction: column;        /* 单列 */
+    flex-direction: column;
     align-items: stretch;
     margin-bottom: 2rem;
   }
 
-  /* 无论有没有 .reverse-layout，手机端都先显示图片 */
   .project-image,
   .project-image.carousel {
-    order: -1;                     /* 关键：图片排到前面 */
-    max-width: 100%;               /* 取消 500px 限制 */
+    order: -1;
+    max-width: 100%;
     width: 100%;
-    padding: 0;                    /* 去掉左右内边距，图更大 */
-    margin: 0 0 12px 0;            /* 图与文字间距 */
+    padding: 0;
+    margin: 0 0 12px 0;
   }
 
   .project-image img,
   .project-image.carousel img {
     width: 100%;
-    height: auto;                  /* 自适应高度 */
-    object-fit: cover;             /* 若将来你给固定高，不会变形 */
+    height: auto;
+    object-fit: cover;
     border-radius: 8px;
   }
 
   .project-text {
-    padding: 0 0.5rem;             /* 移动端左右少量留白 */
+    padding: 0 0.5rem;
   }
 }
-/* —— 修复安卓上轮播横向溢出 —— */
-html, body { overflow-x: hidden; }              /* 兜底：禁止全局横向滚动 */
 
-.section, .project-section { overflow-x: hidden; }  /* 局部兜底 */
+/* —— 修复安卓轮播横向溢出 —— */
+html, body { overflow-x: hidden; }
+.section, .project-section { overflow-x: hidden; }
 
 .project-image.carousel {
   max-width: 100%;
-  padding: 0;                                    /* 避免内边距叠加造成 >100% */
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* slick 内层容器必须裁剪 */
 .slick-slider,
 .slick-list {
   overflow: hidden !important;
 }
 
-/* 让每个 slide 占满一屏且不产生额外宽度 */
 .slick-track { display: flex !important; }
 .slick-slide { height: auto; }
-.slick-slide > div { width: 100%; }              /* react-slick 会包一层 div */
+.slick-slide > div { width: 100%; }
 .project-image.carousel img {
   width: 100% !important;
   height: auto !important;
@@ -160,5 +143,24 @@ html, body { overflow-x: hidden; }              /* 兜底：禁止全局横向�
   border-radius: 8px;
 }
 
-/* 圆点改为静态位置，避免被计算在可视宽度之外 */
 .slick-dots { position: static; margin-top: 8px; }
+
+/* ==== 桌面端优化第二部分轮播大小 ==== */
+@media (min-width: 769px) {
+  .carousel-layout {
+    flex-direction: row;     /* 图片左，文字右 */
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .carousel-layout .project-image.carousel {
+    flex: 0 0 500px;         /* 与第一部分一致 */
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  .carousel-layout .project-text {
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+}
