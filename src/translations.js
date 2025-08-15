@@ -30,7 +30,7 @@ export const translations = {
 
   },
   es: {
-    "footer-text": "Red Europea de Estratificación del Riesgo MOGAD.",
+    "footer-text": "Red Europea de Estratificación del Riesgo en MOGAD.",
     "about-title": "Sobre Nosotros",
     "about-summary-title": "Resumen",
     "about-project-title": "Desarrollo y validación de una escala predictiva para el riesgo de recaída en la enfermedad asociada a anticuerpos contra la glicoproteína de oligodendrocitos de mielina (MOG-RS)",
@@ -59,7 +59,7 @@ export const translations = {
     "join-button": "Unirme a la red MOG-RS",
   },
   fr: {
-    "footer-text": "Réseau européen de stratification des risques MOGAD.",
+    "footer-text": "Réseau européen de stratification du risque dans la MOGAD.",
     "about-title": "À propos de nous",
     "about-summary-title": "Résumé",
     "about-project-title": "Développement et validation d'une échelle prédictive du risque de rechute dans la maladie associée aux anticorps anti-protéine oligodendrocytaire de la myéline (MOG-RS)",
