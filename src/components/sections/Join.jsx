@@ -11,7 +11,7 @@ export default function Join({ t }) {
           <p>{t('join-text')}</p>
 
           <a 
-            href="mailto:juan.granja@salud.madrid.org"
+            href="mailto:mog-rs@idipaz.es"
             className="join-button"
           >
             {t('join-button')}
