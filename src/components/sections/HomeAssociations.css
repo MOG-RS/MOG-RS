@@ -74,9 +74,3 @@
     margin-top: 0.5rem;
 }
 
-/* Responsividad para móviles */
-@media (max-width: 600px) {
-    .associations-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-    }
-}

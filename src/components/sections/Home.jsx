@@ -42,7 +42,7 @@ export default function Home({ t, setCurrentSection}) {
   }, []);
 
   return (
-    <>
+    <section id="home" className="section active home-section">
       <Banner t={t} setCurrentSection={setCurrentSection}/>
 
       <section className="home-slider">
@@ -63,6 +63,6 @@ export default function Home({ t, setCurrentSection}) {
       <HomeInsights t={t} setCurrentSection={setCurrentSection}/>
       <HomeFight t={t} setCurrentSection={setCurrentSection}/>
       <HomeAssociations t={t} setCurrentSection={setCurrentSection}/>
-    </>
+    </section>
   );
 }

@@ -1,8 +1,6 @@
 
 .about-section {
-  max-width: 1200px; /* Aumentamos el max-width para las tarjetas */
-  margin: 0 auto;
-  padding: clamp(1.25rem, 2vw + 0.5rem, 3rem) 1rem;
+  padding: 10rem 4rem 0 4rem;
   background: var(--bg, #ffffff);
   color: var(--text, #262626);
 }
@@ -46,8 +44,4 @@
     color: var(--dark-gray, #666);
 }
 
-@media (max-width: 960px) {
-    .about-section {
-        margin-top: 5rem;
-    }
-}
+

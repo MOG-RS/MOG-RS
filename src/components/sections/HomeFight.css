@@ -28,19 +28,3 @@
     color: var(--text-muted, #515a6a);
 }
 
-
-/* Adaptación a dispositivos móviles (apilar columnas 100%) */
-@media (max-width: 800px) {
-    .fight-layout {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .fight-section {
-        padding: 1.5rem;
-    }
-    
-    .fight-button {
-        justify-content: center; /* Centrar botones en móvil */
-    }
-}

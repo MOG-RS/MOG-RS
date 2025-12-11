@@ -1,4 +1,7 @@
-
+/* src/components/sections/Home.css */
+.home-section{
+  padding-top: 7.5rem; 
+}
 
 .slide {
   position: absolute;
@@ -48,13 +51,7 @@
   pointer-events: none;          /* 避免遮罩挡到轮播触控（可选） */
 }
 
-@media (max-width: 480px) {
-  /* 小屏略向上提一点，避免被底部 UI 挡住（可按需要微调百分比） */
-  .slide-text {
-    top: 46%;
-    transform: translate(0%, -44%);
-  }
-}
+
 
 
 
@@ -83,12 +80,4 @@
   pointer-events: auto;          /* 若需要点击文本再打开 */
 }
 
-/* 小屏再保守一些 */
-@media (max-width: 480px) {
-  .slide-text { left: 4%; right: 4%; bottom: 10%; }
-  .slide-text h2 {
-    max-width: 92%;
-    font-size: clamp(16px, 5.2vw, 32px);
-    padding: 10px 14px;
-  }
-}
+

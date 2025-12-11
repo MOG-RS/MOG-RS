@@ -159,16 +159,14 @@ body {
 
 }
 
-/* ===== Main Content ===== */
+/*===== Main Content ===== */
 .main-content {
   width: 100%;
   margin: 0 auto;
   min-height: 60vh;
-  padding-top: 120px; /* hace que no se esconda el contenido detrás del header fijo */
 }
 
 .section {
-  display: none;
   animation: fadeIn 0.5s ease-in;
 }
 
@@ -359,6 +357,12 @@ body {
   .main-content {
     padding: 1rem;
   }
+}
+
+@media (max-width: 1200px) {
+    .main-content {
+      padding-top: 3rem;
+    }
 }
 
 /* Highlights and Extra */

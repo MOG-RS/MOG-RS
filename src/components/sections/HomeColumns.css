@@ -66,20 +66,3 @@
     background-color: #ccc; /* Color gris de la raya */
     margin: 0 1.5rem;
 }
-
-/* Adaptación a dispositivos móviles: apilar y eliminar la raya */
-@media (max-width: 800px) {
-    .two-column-layout {
-        flex-direction: column;
-        gap: 2rem; /* Espacio entre las tarjetas apiladas */
-    }
-
-    .column-card {
-        max-width: 100%;
-        text-align: left;
-    }
-    
-    .column-divider {
-        display: none; /* Ocultar la raya vertical en móvil */
-    }
-}

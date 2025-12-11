@@ -104,3 +104,21 @@
         justify-content: center; /* Centrar botones en móvil */
     }
 }
+
+/* Adaptación a tablet */
+@media (max-width: 1200px) {
+    .insights-card {
+        padding: 1.5rem;
+    }
+
+    .insights-logo {
+        margin: 1.5rem auto; /* Centrar logo en móvil */
+    }
+    
+    /* Poner botones en vertical */
+    .insights-buttons {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+}

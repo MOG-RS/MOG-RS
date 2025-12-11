@@ -144,8 +144,8 @@ export const translations = {
     "insights-title": "¿Quién somos?",
     "insights-text1": "La MogNmo Network es una red europea de investigación dedicada al estudio de MOGAD y TENMO, con el objetivo de avanzar hacia una medicina más personalizada para estas enfermedades poco frecuentes. Nuestro enfoque combina la excelencia científica con una atención centrada en el paciente, involucrando a pacientes y familias en cada etapa de la investigación.",
     "insights-text2": "Nuestra misión: A través de la colaboración entre hospitales y universidades de Europa y otras partes del mundo, recopilamos datos clínicos y muestras biológicas para mejorar el diagnóstico, la predicción de recaídas, optimizar tratamientos y, en última instancia, mejorar la calidad de vida de quienes viven con MOGAD y NMOSD.",
-    "insights-projects-btn": "Nuestros Proyectos",
-    "insights-contact-btn": "Contacta con nosotros",
+    "insights-projects-btn": "Proyectos",
+    "insights-contact-btn": "Contactános",
     // HOME-FIGHT
     "fight-title": "Apoya nuestra lucha",
     "fight-text": "Tanto los pacientes como los médicos e investigadores pueden apoyar nuestra misión participando en estudios, compartiendo datos clínicos y muestras biológicas, o colaborando en iniciativas de investigación y educación. Cada contribución nos ayuda a entender mejor MOGAD y NMOSD, a mejorar los tratamientos disponibles y a acercarnos a una medicina más personalizada que beneficie a todos los que viven con estas enfermedades.",
