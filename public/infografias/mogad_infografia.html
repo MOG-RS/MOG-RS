@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOGAD - Infografía Educativa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6a85b6 0%, #8e94c4 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .section {
+            padding: 35px 30px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: #6a85b6;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6a85b6 0%, #8e94c4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        
+        .content-box {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #6a85b6;
+        }
+        
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .symptom-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #8e94c4;
+        }
+        
+        .symptom-card h4 {
+            color: #6a85b6;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        .symptom-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .symptom-card li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+        }
+        
+        .symptom-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #8e94c4;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        
+        .table-header {
+            background: #6a85b6;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+        
+        .table-cell {
+            padding: 15px;
+            background: #f8f9ff;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #66bb6a;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #ffa726;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .tip-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border-left: 3px solid #8e94c4;
+        }
+        
+        .tip-item strong {
+            color: #6a85b6;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .faq-item {
+            background: #f8f9ff;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 4px solid #8e94c4;
+        }
+        
+        .faq-question {
+            color: #6a85b6;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .final-message {
+            background: linear-gradient(135deg, #6a85b6 0%, #8e94c4 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        strong {
+            color: #5a6fa8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .table-row {
+                grid-template-columns: 120px 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>MOGAD: Entendiendo la enfermedad asociada a anticuerpos MOG</h1>
+            <p>Una guía clara y práctica para pacientes y familias</p>
+        </div>
+        
+        <!-- Sección 1: ¿Qué es MOGAD? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">❓</span>
+                ¿Qué es MOGAD?
+            </h2>
+            <div class="content-box">
+                <p><strong>MOG</strong> significa <strong>"Myelin Oligodendrocyte Glycoprotein"</strong> (Glicoproteína de Oligodendrocito de la Mielina).</p>
+                <p style="margin-top: 12px;">Es una proteína que forma parte de la mielina, la capa que protege y ayuda a transmitir los impulsos nerviosos.</p>
+            </div>
+            <p style="margin-top: 15px;">En MOGAD, el sistema inmunitario produce anticuerpos contra MOG-IgG, causando inflamación en:</p>
+            <ul style="margin-top: 10px;">
+                <li>El nervio óptico</li>
+                <li>La médula espinal</li>
+                <li>Y/o el cerebro</li>
+            </ul>
+        </div>
+        
+        <!-- Sección 2: ¿A quién afecta? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">👥</span>
+                ¿A quién afecta?
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <strong>Edad:</strong>
+                    Puede afectar a niños y adultos
+                </div>
+                <div class="tip-item">
+                    <strong>Herencia:</strong>
+                    No es hereditaria
+                </div>
+                <div class="tip-item">
+                    <strong>Contagio:</strong>
+                    No es contagiosa
+                </div>
+                <div class="tip-item">
+                    <strong>Causa:</strong>
+                    En algunos casos aparece tras una infección, pero no siempre se conoce la causa
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 3: ¿Cómo se manifiesta? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔍</span>
+                ¿Cómo se manifiesta MOGAD?
+            </h2>
+            <div class="symptom-grid">
+                <div class="symptom-card">
+                    <h4>a) Neuritis óptica</h4>
+                    <ul>
+                        <li>Pérdida de visión en uno o ambos ojos</li>
+                        <li>Dolor con el movimiento ocular</li>
+                        <li>Visión borrosa o colores apagados</li>
+                    </ul>
+                </div>
+                <div class="symptom-card">
+                    <h4>b) Mielitis</h4>
+                    <ul>
+                        <li>Debilidad en piernas o brazos</li>
+                        <li>Hormigueos o entumecimiento</li>
+                        <li>Problemas urinarios o intestinales</li>
+                    </ul>
+                </div>
+                <div class="symptom-card">
+                    <h4>c) Encefalitis / ADEM</h4>
+                    <ul>
+                        <li>Confusión y dolor de cabeza</li>
+                        <li>Somnolencia</li>
+                        <li>Convulsiones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 4: Comparación con EM y NMOSD -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚖️</span>
+                ¿En qué se parece y en qué se diferencia de EM y NMOSD?
+            </h2>
+            
+            <h3 style="color: #66bb6a; margin-top: 20px; margin-bottom: 15px; font-size: 1.3em;">Similitudes</h3>
+            <ul>
+                <li>Afectan a la mielina</li>
+                <li>Producen brotes con inflamación en nervio óptico, médula o cerebro</li>
+                <li>Necesitan valoración por especialistas en neuroinmunología</li>
+            </ul>
+            
+            <h3 style="color: #ffa726; margin-top: 25px; margin-bottom: 15px; font-size: 1.3em;">Diferencias clave</h3>
+            
+            <div class="comparison-table">
+                <div class="table-row">
+                    <div class="table-header">Causa</div>
+                    <div class="table-cell">
+                        <strong>MOGAD:</strong> anticuerpos contra MOG<br>
+                        <strong>NMOSD:</strong> anticuerpos contra AQP4<br>
+                        <strong>EM:</strong> no se identifica un anticuerpo específico
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-header">Evolución</div>
+                    <div class="table-cell">
+                        La recuperación tras los brotes suele ser más completa en MOGAD
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-header">Tratamiento</div>
+                    <div class="table-cell">
+                        Aunque se usan medicamentos similares, la estrategia terapéutica difiere entre estas enfermedades
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-header">Pronóstico</div>
+                    <div class="table-cell">
+                        <strong>MOGAD:</strong> 30–60% tienen un curso monofásico (solo un episodio)<br>
+                        <strong>EM:</strong> la mayoría tienen un curso crónico
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 5: ¿Cómo se diagnostica? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔬</span>
+                ¿Cómo se diagnostica?
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <strong>Análisis de sangre</strong>
+                    Para detectar anticuerpos MOG-IgG con técnicas específicas
+                </div>
+                <div class="tip-item">
+                    <strong>Resonancia magnética</strong>
+                    Para identificar áreas inflamadas
+                </div>
+                <div class="tip-item">
+                    <strong>Punción lumbar</strong>
+                    Cuando está indicada
+                </div>
+                <div class="tip-item">
+                    <strong>Valoración clínica</strong>
+                    Por un neurólogo especializado
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 6: Tratamiento -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">💊</span>
+                Tratamiento
+            </h2>
+            
+            <div class="warning-box">
+                <h3 style="color: #f57c00; margin-bottom: 12px;">Durante un brote</h3>
+                <ul>
+                    <li><strong>Corticoides intravenosos</strong></li>
+                    <li style="margin-top: 10px;"><strong>Si la respuesta no es suficiente:</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Plasmaféresis (PLEX)</li>
+                            <li>Inmunoglobulinas intravenosas (IVIG)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 style="color: #2e7d32; margin-bottom: 12px;">Prevención de recaídas</h3>
+                <p style="margin-bottom: 10px;"><em>(En caso de recaídas o alto riesgo de recurrencia)</em></p>
+                <ul>
+                    <li>Inmunosupresores como terapia de mantenimiento (según el caso)</li>
+                    <li>Inmunoglobulinas mensuales (IVIG)</li>
+                    <li>Corticoides orales durante un periodo definido</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <strong>Importante:</strong> No todas las personas con MOGAD necesitan tratamiento preventivo a largo plazo.
+            </div>
+        </div>
+        
+        <!-- Sección 7: Pronóstico -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                Pronóstico
+            </h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>La recuperación tras los brotes suele ser buena</li>
+                    <li>Entre un 30–60% de los pacientes presentan un curso monofásico, sin nuevas recaídas a lo largo del tiempo</li>
+                    <li>Cuando persisten síntomas (fatiga, dolor, alteraciones visuales o urinarias), pueden manejarse con un equipo multidisciplinar</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Sección 8: Consejos prácticos -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">💡</span>
+                Consejos prácticos
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <strong>Reconocer señales de alerta:</strong>
+                    Cambios visuales, debilidad, hormigueos, nuevos problemas urinarios
+                </div>
+                <div class="tip-item">
+                    <strong>Seguir el tratamiento pautado:</strong>
+                    Ayuda a evitar recaídas y mejorar la recuperación
+                </div>
+                <div class="tip-item">
+                    <strong>Fisioterapia y rehabilitación:</strong>
+                    Útiles para la marcha, fuerza y fatiga
+                </div>
+                <div class="tip-item">
+                    <strong>Sueño adecuado y ejercicio regular:</strong>
+                    Mejoran energía, bienestar y función cognitiva
+                </div>
+                <div class="tip-item">
+                    <strong>Control de infecciones:</strong>
+                    Pueden empeorar temporalmente los síntomas
+                </div>
+                <div class="tip-item">
+                    <strong>Apoyo emocional y psicológico:</strong>
+                    Puede ayudar en la adaptación y calidad de vida
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 9: Preguntas frecuentes -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">❔</span>
+                Preguntas frecuentes
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿La MOGAD dura para siempre?</div>
+                <div>No necesariamente. Muchas personas tienen un solo episodio.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo hacer ejercicio?</div>
+                <div>Sí. La actividad física adaptada es segura y beneficiosa.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Es compatible con el embarazo?</div>
+                <div>Con seguimiento especializado, la mayoría de los embarazos transcurren con normalidad.</div>
+            </div>
+        </div>
+        
+        <!-- Mensaje final -->
+        <div class="final-message">
+            <h2 style="margin-bottom: 15px; font-size: 1.5em;">Mensaje final</h2>
+            <p>La MOGAD puede asustar al inicio, pero con un diagnóstico preciso, un tratamiento adecuado y un buen seguimiento, la mayoría de las personas recuperan un nivel de vida satisfactorio. Estar informado y participar en tu cuidado marca la diferencia.</p>
+        </div>
+    </div>
+</body>
+</html>

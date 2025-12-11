@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { translations } from './translations';
 
 import Header from './components/Header';
-import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 import About from './components/sections/About';
-import Join from './components/sections/Join';
+import Educate from './components/sections/Educate';
 import Contact from './components/sections/Contact';
 import Home from './components/sections/Home';
 import Project from './components/sections/Project';
@@ -19,6 +18,10 @@ function App() {
   const [currentSection, setCurrentSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentSection]);
+
   const t = (key) => {
     const langData = translations[currentLang];
     return langData && langData[key] ? langData[key] : key;
@@ -26,20 +29,18 @@ function App() {
 
   return (
     <div className="App">
-      <Header currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <NavBar
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-        t={t}
-      />
+      <div className="full-fixed-header">
+        <Header currentLang={currentLang} setCurrentLang={setCurrentLang} t={t} currentSection={currentSection}
+          setCurrentSection={setCurrentSection}
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}/>
+      </div>
 
-    <main className="main-content">
-        {currentSection === 'home' && <Home t={t} />}
+    <main id="app-main-content" className="main-content">
+        {currentSection === 'home' && <Home t={t} setCurrentSection={setCurrentSection} />}
         {currentSection === 'about' && <About t={t} />}
         {currentSection === 'project' && <Project t={t} />}
-        {currentSection === 'join' && <Join t={t} />}
+        {currentSection === 'educate' && <Educate t={t} currentLang={currentLang}/>}
         {currentSection === 'contact' && <Contact t={t} />}
     </main>
 

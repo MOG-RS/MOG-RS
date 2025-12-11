@@ -1,0 +1,82 @@
+/* src/components/sections/HomeAssociations.css */
+
+.associations-section-wrapper {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.associations-main-title {
+    margin-bottom: 2.5rem;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--accent-red, #c1272d);
+    display: inline-block;
+}
+
+.associations-grid {
+    display: grid;
+    /* Crear 3 columnas de tamaño similar, ajustándose al espacio disponible */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.association-card {
+    /* Estilo de tarjeta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    
+    padding: 2rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    
+    /* Efecto Hover: Elevar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.association-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-logo-container {
+    height: 80px; /* Altura fija para centrar y uniformar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.association-logo {
+    max-height: 100%; /* El logo se ajusta a la altura del contenedor */
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.association-name {
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.cta-link {
+    font-size: 0.9rem;
+    color: var(--accent-red);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+    .associations-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+}

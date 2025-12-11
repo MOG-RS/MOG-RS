@@ -1,0 +1,85 @@
+/* src/components/sections/HomeColumns.css */
+
+.column-section-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem 2rem; /* Más espacio abajo */
+    text-align: center;
+    overflow: hidden;
+    background-color: #edeef1;
+}
+
+.column-compare-title {
+    margin-bottom: 2.5rem;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--accent-red);
+    display: inline-block; /* Para que el borde sea solo el ancho del texto */
+}
+
+.two-column-layout {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Espacio entre las columnas */
+    padding: 0;
+    position: relative;
+}
+
+.column-card {
+    flex: 1;
+    max-width: 500px;
+    padding: 1.5rem;
+    text-align: left;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empujar el botón abajo */
+}
+
+.column-title {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px dashed rgba(0, 61, 106, 0.2); /* Raya sutil */
+    padding-bottom: 0.5rem;
+}
+
+.column-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Permite que el texto ocupe espacio, separando el botón */
+}
+
+/* Estilos de Botón - Reutiliza la clase ctb-button de App.css */
+.column-card .ctb-button {
+    margin-top: 1rem; /* Separa el botón del texto */
+    align-self: flex-start; /* Alinea el botón a la izquierda de la columna */
+}
+
+/* Línea divisoria (solo en pantallas grandes) */
+.column-divider {
+    width: 1px;
+    background-color: #ccc; /* Color gris de la raya */
+    margin: 0 1.5rem;
+}
+
+/* Adaptación a dispositivos móviles: apilar y eliminar la raya */
+@media (max-width: 800px) {
+    .two-column-layout {
+        flex-direction: column;
+        gap: 2rem; /* Espacio entre las tarjetas apiladas */
+    }
+
+    .column-card {
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    .column-divider {
+        display: none; /* Ocultar la raya vertical en móvil */
+    }
+}

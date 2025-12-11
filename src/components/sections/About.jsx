@@ -2,30 +2,37 @@
  * src/components/sections/About.jsx
  */
 
-
-
 import React from 'react';
-import './About.css'; // 确保你有对应的样式文件
+import './About.css'; 
+
 
 export default function About({ t }) {
   return (
-    <section className="section active about-section">
+    <section id="about" className="section active about-section">
+      {/* Titulo Principal de la Seccion */}
       <h2 className="section-title serif">{t('about-title')}</h2>
 
-      {/* Background Section */}
-      <div className="about-block">
-        <h3 className="block-title">
-          {t('about-background-title')}
-        </h3>
-        <p className="block-text">{t('about-background-text')}</p>
-      </div>
+      {/* Contenedor de las tres tarjetas */}
+      <div className="about-cards">
+        
+        {/* Tarjeta 1: Misión */}
+        <div className="info-card">
+          <h3 className="about-card-title serif">{t('about-mission-title')}</h3>
+          <p className="card-text">{t('about-mission-text')}</p>
+        </div>
 
-      {/* Objectives Section */}
-      <div className="about-block">
-        <h3 className="block-title">
-          {t('about-objectives-title')}
-        </h3>
-        <p className="block-text">{t('about-objectives-text')}</p>
+        {/* Tarjeta 2: Quiénes Somos */}
+        <div className="info-card">
+          <h3 className="about-card-title serif">{t('about-who-title')}</h3>
+          <p className="card-text">{t('about-who-text')}</p>
+        </div>
+
+        {/* Tarjeta 3: Qué Hacemos */}
+        <div className="info-card">
+          <h3 className="about-card-title serif">{t('about-what-title')}</h3>
+          <p className="card-text">{t('about-what-text')}</p>
+        </div>
+        
       </div>
     </section>
   );

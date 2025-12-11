@@ -1,41 +1,141 @@
+/* src/components/sections/Project.css */
+
+/* --- Importar variables de color de Educate.css --- */
+:root {
+    --bg-white: #ffffff;
+    --gray-light: #f6f7f9;
+    --gray: #e1e5e9;
+    --dark-blue: #102a43;
+    --garnet: #7a1620;
+    --text-muted: #4a5560;
+    --text-dark: #102028;
+}
+/* ------------------------------------------------ */
+
 .project-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
+  overflow: hidden;
+  margin-top: 1.7rem; 
+}
+
+.introduction_project {
+  padding: 0 2.2rem;
+  background-color: var(--bg-white);
+  border: 0cm;
+}
+
+.project-bg-white {
+  background-color: var(--bg-white);
+  /* Asegurar que las secciones blancas también tengan el mismo padding que la gris */
+  padding: 1rem 4rem;
+}
+.project-bg-gray {
+  background-color: var(--gray-light);
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 4rem 0rem 4rem;
 }
 
 .reverse-layout {
   flex-direction: row-reverse;
 }
 
+/* --- Estilos para Logo y Título (Alineados con Educate) --- */
+.project-title-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; 
+}
+
+.project-logo {
+  width: 80px; 
+  height: 80px;
+  margin-right: 15px;
+  border-radius: 50%; 
+  object-fit: contain; 
+  flex-shrink: 0;
+}
+
+/* Aplicar color y estilo de fuente de Educate.css (section-title / section-title) */
+.project-text h3.subsection-title {
+  margin: 0;
+  font-size: 1.6rem; 
+  font-weight: 700; 
+  color: var(--dark-blue); 
+}
+
+.project-intro {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem; /* Consistencia con section-content de Educate */
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Subtítulos (Objetivo / Diseño) */
+.project-subtitle {
+  font-size: 1.3rem; /* Tamaño intermedio */
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--dark-blue); 
+}
+
+/* Texto del cuerpo del proyecto (Objetivo / Diseño) */
+.project-text p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.project-text .markdown-container {
+    /* Aquí aplicamos los estilos de fuente, color y tamaño de Educate */
+    margin-bottom: 1rem; 
+    font-size: 1.1rem; /* Consistente con Educate */
+    line-height: 1.65;
+    color: var(--text-muted); /* Color de texto base */
+}
+
+/* ------------------------------------------------- */
+
 .project-image {
-  flex: 1;
-  padding: 1rem;
-  max-width: 500px;
+  /* Ancho fijo para la imagen */
+  width: 450px; 
+  /* Quitar flex: 1 */
+  padding: 0;
+  margin: 4rem 4rem 3rem 0; /* Margin derecho para separar del texto */
+  float: left;
+}
+
+.reverse-layout .project-image {
+  float: right;
+  margin: 4rem 0 3rem 3rem; /* Margin izquierdo para separar del texto */
 }
 
 .project-image img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12); 
+  height: auto; 
+  display: block; 
 }
 
 .project-text {
-  flex: 1;
   padding: 1rem;
 }
 
+/* --- Estilos de enlaces (Se mantienen, pero aseguramos la consistencia) --- */
 .ev-links {
   padding-left: 1rem;
   list-style: disc;
+  font-size: 1.05rem; /* Ajustar el tamaño del texto de la lista */
 }
 
 /* 链接统一样式 */
 .ev-links a,
 .pdf-link {
-  color: #0066cc;
+  color: var(--dark-blue); /* Usar el azul oscuro principal */
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -43,50 +143,46 @@
 
 .ev-links a:hover,
 .pdf-link:hover {
-  color: #003d6a;
-}
-
-.pdf-link {
-  display: inline-block;
-  margin-top: 0.75rem;
-  text-decoration: underline;
-  background: none;
-  padding: 0;
-  border-radius: 0;
+  color: var(--garnet); /* Usar el granate al pasar el ratón */
 }
 
 .toggle-links-btn {
   margin-top: 0.5rem;
   background: none;
   border: none;
-  color: #0066cc;
+  color: var(--dark-blue);
   font-size: 0.95rem;
   cursor: pointer;
   padding: 0;
   text-decoration: underline;
 }
-.toggle-links-btn:hover { color: #003d6a; }
+.toggle-links-btn:hover { color: var(--garnet); }
 
-.project-image.carousel {
-  flex: 1;
-  max-width: 500px;
+
+/* --- Tarjeta de Enlaces Separada (Alineada con tratamiento-card de Educate) --- */
+.links{
+  background-color: var(--gray-light);
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+.project-links-card {
+  max-width: 900px; 
+  margin: 3rem auto 4rem auto; /* Más espacio arriba y abajo */
+  padding: 2rem;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06); 
+  background-color: var(--bg-white);
 }
 
-.project-image.carousel img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+.project-links-card p:first-child {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 600; /* Destacar el título de la tarjeta */
+  color: var(--dark-blue);
 }
+/* ---------------------------------------------------- */
 
-/* slick 圆点配色 */
-.slick-dots li button:before {
-  color: #0066cc;
-  font-size: 10px;
-}
-.slick-dots li.slick-active button:before {
-  color: #003d6a;
-}
 
 /* ==== Mobile 优化 ==== */
 @media (max-width: 768px) {
@@ -96,8 +192,7 @@
     margin-bottom: 2rem;
   }
 
-  .project-image,
-  .project-image.carousel {
+  .project-image { 
     order: -1;
     max-width: 100%;
     width: 100%;
@@ -105,62 +200,32 @@
     margin: 0 0 12px 0;
   }
 
-  .project-image img,
-  .project-image.carousel img {
+  .project-image img { 
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 
   .project-text {
     padding: 0 0.5rem;
   }
-}
-
-/* —— 修复安卓轮播横向溢出 —— */
-html, body { overflow-x: hidden; }
-.section, .project-section { overflow-x: hidden; }
-
-.project-image.carousel {
-  max-width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.slick-slider,
-.slick-list {
-  overflow: hidden !important;
-}
-
-.slick-track { display: flex !important; }
-.slick-slide { height: auto; }
-.slick-slide > div { width: 100%; }
-.project-image.carousel img {
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-  border-radius: 8px;
-}
-
-.slick-dots { position: static; margin-top: 8px; }
-
-/* ==== 桌面端优化第二部分轮播大小 ==== */
-@media (min-width: 769px) {
-  .carousel-layout {
-    flex-direction: row;     /* 图片左，文字右 */
-    flex-wrap: nowrap;
-    align-items: flex-start;
+  
+  .project-logo {
+      width: 30px; 
+      height: 30px;
+      margin-right: 10px;
+  }
+  
+  .project-text h3.subsection-title {
+      font-size: 1.4rem;
   }
 
-  .carousel-layout .project-image.carousel {
-    flex: 0 0 500px;         /* 与第一部分一致 */
-    max-width: 500px;
-    padding: 1rem;
-  }
-
-  .carousel-layout .project-text {
-    flex: 1 1 auto;
-    padding: 1rem;
+  .project-links-card {
+      margin: 1.5rem 0.5rem 2rem 0.5rem;
+      padding: 1.25rem;
+      max-width: 100%;
   }
 }
+

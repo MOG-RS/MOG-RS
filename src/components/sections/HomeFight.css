@@ -1,0 +1,46 @@
+/* src/components/sections/HomeFight.css */
+
+.fight-section-wrapper {
+    width: 100%;
+    margin: 4rem auto; /* Añade margen superior e inferior */
+    padding: 0 2rem;
+    overflow: hidden;
+    background-color: #edeef1;
+}
+
+.fight-section {
+    padding: 4rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: var(--dark-blue, #003d6a);
+    border-bottom: 3px solid var(--accent-red, #c1272d);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather', serif; /* Usando la fuente serif de tu proyecto */
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted, #515a6a);
+}
+
+
+/* Adaptación a dispositivos móviles (apilar columnas 100%) */
+@media (max-width: 800px) {
+    .fight-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .fight-section {
+        padding: 1.5rem;
+    }
+    
+    .fight-button {
+        justify-content: center; /* Centrar botones en móvil */
+    }
+}

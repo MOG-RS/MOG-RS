@@ -1,0 +1,106 @@
+/* src/components/sections/HomeInsights.css */
+
+.insights-section-wrapper {
+    max-width: 1200px;
+    margin: 4rem auto; /* Añade margen superior e inferior */
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.insights-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.insights-column {
+    /* Base para ambas columnas */
+    padding: 0.5rem; 
+}
+
+/* Definición de la proporción 70/30 en pantallas grandes */
+.column-70 {
+    flex: 5; /* 60% */
+}
+
+.column-30 {
+    flex: 3; /* 40% */
+    min-width: 250px; /* Asegura que la columna pequeña tenga espacio mínimo */
+}
+
+.insights-card {
+    padding: 2rem;
+    height: 100%; /* Para que la tarjeta se estire y se vea bien */
+    background: var(--white, #ffffff);
+    border: 1px solid var(--border, #e6ebf2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-size: 2rem;
+    color: var(--dark-blue, #003d6a);
+    border-bottom: 3px solid var(--accent-red, #c1272d);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather', serif; /* Usando la fuente serif de tu proyecto */
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted, #515a6a);
+}
+
+.insights-logo {
+    max-width: 300px; /* Tamaño del logo en esta sección */
+    height: auto;
+    margin: 1.5rem auto;
+    display: block;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+}
+
+.insights-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Estilos específicos para la tarjeta de la derecha (quick links) */
+.logo .card-title {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.logo p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+
+
+/* Adaptación a dispositivos móviles (apilar columnas 100%) */
+@media (max-width: 800px) {
+    .insights-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .column-70, .column-30 {
+        flex: none; /* Desactivar la proporción */
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .insights-card {
+        padding: 1.5rem;
+    }
+
+    .insights-logo {
+        margin: 1.5rem auto; /* Centrar logo en móvil */
+    }
+    
+    .insights-buttons {
+        justify-content: center; /* Centrar botones en móvil */
+    }
+}

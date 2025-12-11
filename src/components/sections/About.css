@@ -1,147 +1,49 @@
-/* ====== 基础与主题变量（作用于页面） ====== */
-:root {
-  --max-w: 900px;
-  --radius: 12px;
-  --space-1: 0.5rem;
-  --space-2: 0.75rem;
-  --space-3: 1rem;
-  --space-4: 1.5rem;
-  --space-5: 2rem;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --transition: 180ms cubic-bezier(.2,.8,.2,1);
 
-  /* 颜色（浅色主题） */
-  --bg: #ffffff;
-  --bg-subtle: #f7f9fc;
-  --text: #262626;
-  --text-muted: #515a6a;
-  --brand: #5aa4e4;
-  --brand-ink: #0b3d6a;
-  --accent: #e8f2fd;
-  --border: #e6ebf2;
-}
-
-/* 减少动态偏好 */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-
-/* ====== About 区块（容器） ====== */
 .about-section {
-  max-width: var(--max-w);
+  max-width: 1200px; /* Aumentamos el max-width para las tarjetas */
   margin: 0 auto;
   padding: clamp(1.25rem, 2vw + 0.5rem, 3rem) 1rem;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg, #ffffff);
+  color: var(--text, #262626);
 }
 
-/* Firefox 黑屏常见原因兜底：禁用混合/遮罩/模糊 */
-.about-section,
-.about-section * {
-  mix-blend-mode: normal !important;
-  background-blend-mode: normal !important;
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-  backdrop-filter: none !important; /* 如需半透明，用 rgba 覆盖层 */
+/* Nuevo contenedor para la cuadrícula de tarjetas */
+.about-cards {
+    margin-top: 2rem;
 }
 
-/* 图片自适应 */
-.about-section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Estilo para cada tarjeta */
+.info-card {
+    background: #f7f9fc; 
+    margin-bottom: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
 }
 
-/* 单个信息块 */
-.about-block {
-  position: relative;
-  margin-block: var(--space-4);
-  background: var(--bg-subtle);
-  padding: clamp(var(--space-4), 2vw, var(--space-5));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+.info-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* 左侧强调条（纯色/渐变，避免滤镜） */
-.about-block::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 6px;
-  border-radius: var(--radius) 0 0 var(--radius);
-  background: linear-gradient(180deg, var(--brand), color-mix(in srgb, var(--brand) 70%, transparent));
+/* Títulos de las tarjetas */
+.about-card-title {
+    font-size: 1.6rem;
+    color: #0b3d6a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.about-block:hover,
-.about-block:focus-within {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+/* Texto dentro de las tarjetas */
+.card-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--dark-gray, #666);
 }
 
-/* 标题与文本 */
-.block-title {
-  font-family: "Merriweather", ui-serif, Georgia, serif;
-  font-size: clamp(1.25rem, 1.2rem + 0.6vw, 1.75rem);
-  line-height: 1.3;
-  color: var(--brand-ink);
-  margin: 0 0 var(--space-2);
-  letter-spacing: 0.2px;
-}
 
-.block-highlight {
-  font-weight: 700;
-  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
-  margin: 0 0 var(--space-2);
-  color: var(--text);
-}
-
-.block-text {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: clamp(0.98rem, 0.95rem + 0.3vw, 1.05rem);
-  line-height: 1.75;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-.block-text + .block-text { margin-top: var(--space-2); }
-
-/* 响应式两列 */
-@media (min-width: 860px) {
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-  }
-  .about-grid .about-block { margin-block: 0; }
-}
-
-/* 浅色下的悬浮微调 */
-@media (prefers-color-scheme: light) {
-  .about-block:hover,
-  .about-block:focus-within {
-    background: color-mix(in srgb, var(--bg-subtle) 92%, white);
-  }
-}
-
-/* 链接样式 */
-.about-block a {
-  color: var(--brand);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
-  transition: color var(--transition);
-}
-.about-block a:hover,
-.about-block a:focus {
-  color: var(--brand-ink);
-  outline: none;
-}
-
-/* 紧凑模式（可选） */
-.compact .about-block {
-  padding: var(--space-4);
-  margin-block: var(--space-3);
-}
-.compact .block-title { margin-bottom: var(--space-1); }

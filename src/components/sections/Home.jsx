@@ -1,6 +1,11 @@
 // src/components/sections/Home.jsx
 import React, { useEffect, useState } from 'react';
 import './Home.css';
+import Banner from './Banner';
+import HomeColumns from './HomeColumns'
+import HomeInsights from './HomeInsights'
+import HomeFight from './HomeFight'
+import HomeAssociations from './HomeAssociations'
 
 const images = [
   {
@@ -25,7 +30,7 @@ const images = [
   }
 ];
 
-export default function Home({ t }) {
+export default function Home({ t, setCurrentSection}) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -37,18 +42,27 @@ export default function Home({ t }) {
   }, []);
 
   return (
-    <section className="home-slider">
-      {images.map((image, index) => (
-        <div
-          className={`slide ${index === current ? 'active' : ''}`}
-          key={index}
-          style={{ backgroundImage: `url(${image.src})` }}
-        >
-          <div className="slide-text">
-            <h2>{image.text}</h2>
+    <>
+      <Banner t={t} setCurrentSection={setCurrentSection}/>
+
+      <section className="home-slider">
+        {images.map((image, index) => (
+          <div
+            className={`slide ${index === current ? 'active' : ''}`}
+            key={index}
+            style={{ backgroundImage: `url(${image.src})` }}
+          >
+            <div className="slide-text">
+              <h2>{image.text}</h2>
+            </div>
           </div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
+
+      <HomeColumns t={t} setCurrentSection={setCurrentSection}/>
+      <HomeInsights t={t} setCurrentSection={setCurrentSection}/>
+      <HomeFight t={t} setCurrentSection={setCurrentSection}/>
+      <HomeAssociations t={t} setCurrentSection={setCurrentSection}/>
+    </>
   );
 }

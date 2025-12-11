@@ -1,38 +1,90 @@
-/*** 
- * src/components/sections/Contact.jsx
- */
 import React from 'react';
 import './Contact.css';
 
+import juanPhoto from '../../asset/juan.jpeg'; 
+import gabrielPhoto from '../../asset/gabriel.png';
+import inmaculadaPhoto from '../../asset/inmaculada.png';
+import lauraPhoto from '../../asset/laura.png';
+import miniLogo from '../../asset/logo_peque.png'; 
+
+// --- ESTRUCTURA DE DATOS DE CONTACTOS ---
+const teamContacts = [
+    {
+        name: "Juan Granja López",
+        title: "Network coordinator. Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital.",
+        email: "juan.granja.nrl@gmail.com",
+        photo: juanPhoto,
+    }, 
+    {
+        name: "Gabriel Torres Iglesias", 
+        title: "Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital. ",
+        email: "gabriel.torres@salud.madrid.org",
+        photo: gabrielPhoto,
+    },
+    {
+        name: "Inmaculada Puertas Muñoz",
+        title: "Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital.",
+        email: "inmaculada.puertas@salud.madrid.org",
+        photo: inmaculadaPhoto,
+    },
+    {
+        name: "Laura Otero Ortega",
+        title: "Investigadora Miguel Servet. IdiPAZ Health Research Institute, La Paz University Hospital.",
+        email: "oteroortega.l@gmail.com",
+        photo: lauraPhoto,
+    },
+];
+// ----------------------------------------
+
 export default function Contact({ t }) {
-  return (
-    <section className="section active contact-section">
-      <h2 className="section-title serif">{t('contact-title')}</h2>
-      
-      <div className="contact-content">
-        <p className="contact-description">{t('contact-description')}</p>
+    return (
+        <section id="contact" className="section active contact-section">
+            <h2 className="section-title serif">{t('contact-title')}</h2>
+            
+            {/* 1. Cuadrícula de Tarjetas de Contacto */}
+            <div className="contact-grid">
+                {teamContacts.map((person, index) => (
+                    <div key={index} className="contact-card">
+                        {/* Foto Redonda */}
+                        <div className="photo-wrapper">
+                            <img src={person.photo} alt={person.name} className="contact-photo" />
+                        </div>
+                        
+                        {/* Información */}
+                        <h3 className="person-name">{person.name}</h3>
+                        <p className="person-title">{person.title}</p>
+                        
+                        {/* Correo (clicable) */}
+                        <a href={`mailto:${person.email}`} className="person-email">
+                            {person.email}
+                        </a>
+                        
+                        {/* Logo Pequeño Debajo */}
+                        <img src={miniLogo} alt="Logo" className="card-mini-logo" />
+                    </div>
+                ))}
+            </div>
 
-        <div className="contact-info-box">
-          {/* 第一部分：通用联系邮箱 */}
-          <p>
-            <strong>Contact Information:</strong>{' '}
-            <a href="mailto:mog-rs@idipaz.es">mog-rs@idipaz.es</a>
-          </p>
+            {/* 2. Tarjeta de Contacto General (Mantenida) */}
+            <div className="contact-info-box">
+              <p className="contact-description">{t('contact-description')}</p>
+              <p>
+                  <strong>{t('contact-coordinator')}:</strong>{' '}
+                  Juan Granja López{' '}
+                  <a href="mailto:juan.granja@salud.madrid.org">juan.garcia@salud.madrid.org</a>
+              </p>
 
-          {/* 第二部分：协调人姓名和邮箱 */}
-          <p>
-            <strong>MOG-RS Network Coordinator:</strong>{' '}
-            Juan Granja López{' '}
-            <a href="mailto:juan.granja@salud.madrid.org">juan.granja@salud.madrid.org</a>
-          </p>
-
-          {/* 按钮 */}
-          <a href="mailto:mog-rs@idipaz.es" className="contact-button">
-            📩 {t('contact-button-text') || 'Contact Us'}
-          </a>
-        </div>
-      </div>
-    </section>
-  );
+              <a
+                type="button"
+                className="ctb-button"
+                onClick={() => { window.location.href = 'mailto:mog-rs@idipaz.es'; }}
+              >
+                {t('contact-button-text')}
+              </a>
+            </div>
+            
+        </section>
+    );
 }
+  
 

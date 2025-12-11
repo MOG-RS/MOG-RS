@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 import React from 'react';
-import imagemogrs from '../asset/imagemogrs.png';
+import imagemogrs from '../asset/logo2.png';
 import imageindipaz from '../asset/imageidpaz.png';
 import imageuam from '../asset/imageuam.png';
 
@@ -30,7 +30,7 @@ const Footer = ({ t }) => {
         {/* 底部版权和创作者 */}
         <div className="footer-bottom-text">
           <span>{t('footer-text')}</span>
-          <span className="footer-creator">©2025 by Yuheng He</span>
+          <span className="footer-creator">©2025 by Yuheng He & Claudia Vila</span>
         </div>
       </div>
     </footer>

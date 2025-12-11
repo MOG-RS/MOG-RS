@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENMO: Understanding Neuromyelitis Optica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0e8f4 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6B9BD1 0%, #8B7FB8 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .section {
+            padding: 35px 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: #6B9BD1;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title .icon {
+            font-size: 1.3em;
+        }
+        
+        .info-card {
+            background: #f8fbfd;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #6B9BD1;
+        }
+        
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .symptom-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .symptom-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .symptom-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .symptom-card h3 {
+            color: #6B9BD1;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #6B9BD1 0%, #8B7FB8 100%);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 18px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8fbfd;
+        }
+        
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .treatment-card {
+            background: linear-gradient(135deg, #E8F4F8 0%, #F0E8F4 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #6B9BD1;
+        }
+        
+        .treatment-card h3 {
+            color: #6B9BD1;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .tip-icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+        
+        .faq-item {
+            background: #f8fbfd;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #8B7FB8;
+        }
+        
+        .faq-item h3 {
+            color: #6B9BD1;
+            margin-bottom: 10px;
+            font-size: 1.15em;
+        }
+        
+        .final-message {
+            background: linear-gradient(135deg, #6B9BD1 0%, #8B7FB8 100%);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            font-size: 1.15em;
+            line-height: 1.8;
+            border-radius: 12px;
+            margin: 20px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            color: #8B7FB8;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 TENMO: Understanding Neuromyelitis Optica</h1>
+            <p>A clear and practical guide for patients and families</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📋</span> What is TENMO?</h2>
+            <div class="info-card">
+                <ul>
+                    <li>An inflammatory disorder of the central nervous system primarily affecting the optic nerves and spinal cord.</li>
+                    <li>The immune system produces AQP4 antibodies, which damage myelin and nerve fibers.</li>
+                    <li>Causes inflammation that can affect vision and movement.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">👥</span> Who is Affected?</h2>
+            <div class="info-card">
+                <ul>
+                    <li>Mostly occurs in adults, more commonly in women.</li>
+                    <li>It is not inherited or contagious.</li>
+                    <li>The exact cause is often unknown; sometimes it occurs after infections.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">⚠️</span> Main Symptoms</h2>
+            <div class="symptom-grid">
+                <div class="symptom-card">
+                    <div class="symptom-icon">👁️</div>
+                    <h3>Optic Neuritis</h3>
+                    <p>Vision loss, eye pain, blurred or faded vision</p>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">🦵</div>
+                    <h3>Myelitis</h3>
+                    <p>Weakness in arms or legs, tingling, numbness, bladder or bowel problems</p>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">⚡</div>
+                    <h3>Other Symptoms</h3>
+                    <p>Neuropathic pain, fatigue, difficulty walking</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🔍</span> Comparison with MOGAD and MS</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>TENMO</th>
+                        <th>MOGAD</th>
+                        <th>MS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cause</strong></td>
+                        <td>AQP4 antibodies</td>
+                        <td>MOG antibodies</td>
+                        <td>No specific antibody identified</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Course</strong></td>
+                        <td>Recurrent attacks; risk of lasting effects</td>
+                        <td>Frequently monophasic</td>
+                        <td>Chronic, progressive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prognosis</strong></td>
+                        <td>Risk of sequelae after attacks</td>
+                        <td>Often full recovery</td>
+                        <td>Variable course; risk of disability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🔬</span> Diagnosis</h2>
+            <div class="symptom-grid">
+                <div class="symptom-card">
+                    <div class="symptom-icon">💉</div>
+                    <h3>Blood Test</h3>
+                    <p>For AQP4 antibodies</p>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">🧲</div>
+                    <h3>MRI</h3>
+                    <p>Brain, optic nerves, and spinal cord</p>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">🩺</div>
+                    <h3>Lumbar Puncture</h3>
+                    <p>If needed</p>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">👨‍⚕️</div>
+                    <h3>Specialist</h3>
+                    <p>Neurologist in neuroimmunology</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">💊</span> Treatment</h2>
+            <h3 style="color: #8B7FB8; margin-top: 20px;">During Attacks</h3>
+            <div class="info-card">
+                <p><strong>Intravenous steroids</strong>; if insufficient, <strong>plasma exchange</strong> or <strong>IV immunoglobulins</strong></p>
+            </div>
+            
+            <h3 style="color: #8B7FB8; margin-top: 30px; margin-bottom: 15px;">Relapse Prevention (Approved Treatments)</h3>
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <h3>Eculizumab</h3>
+                </div>
+                <div class="treatment-card">
+                    <h3>Ravulizumab</h3>
+                </div>
+                <div class="treatment-card">
+                    <h3>Inebilizumab</h3>
+                </div>
+                <div class="treatment-card">
+                    <h3>Satralizumab</h3>
+                </div>
+                <div class="treatment-card">
+                    <h3>Rituximab</h3>
+                </div>
+                <div class="treatment-card">
+                    <h3>Traditional immunosuppressive therapies</h3>
+                    <p style="font-size: 0.9em; margin-top: 5px;">As determined by the treating physician</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📊</span> Prognosis</h2>
+            <div class="info-card">
+                <ul>
+                    <li>The disease can be recurrent, and attacks may leave lasting effects.</li>
+                    <li>With rehabilitation and personalized treatment, long-term impact can be minimized, helping patients maintain a good quality of life.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">💡</span> Practical Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🚨</div>
+                    <div>
+                        <strong>Recognize Warning Signs:</strong> Changes in vision, weakness, tingling, bladder or bowel problems
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📅</div>
+                    <div>
+                        <strong>Follow Treatment:</strong> Take prescribed medications and attend regular medical check-ups
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🏃</div>
+                    <div>
+                        <strong>Stay Active:</strong> Engage in adapted exercise and get enough sleep
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🛡️</div>
+                    <div>
+                        <strong>Prevent Infections:</strong> Take precautions to stay healthy
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">❤️</div>
+                    <div>
+                        <strong>Emotional Support:</strong> Psychological support is important for wellbeing and adaptation
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title"><span class="icon">❓</span> Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Does TENMO last forever?</h3>
+                <p>It is a chronic condition, but with proper treatment, it can be managed, allowing a good quality of life.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I exercise?</h3>
+                <p>Yes, safely, if adapted to your abilities.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is pregnancy possible?</h3>
+                <p>With specialist care, most pregnancies proceed normally.</p>
+            </div>
+        </div>
+        
+        <div class="final-message">
+            <strong>"TENMO can be challenging, but with accurate diagnosis, treatment, and proper follow-up, many people live active and fulfilling lives. Being informed and involved in your care makes a difference."</strong>
+        </div>
+    </div>
+</body>
+</html>

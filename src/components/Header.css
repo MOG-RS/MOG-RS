@@ -24,13 +24,16 @@
     opacity: 0.9;
     margin: 0;
   }
+
   .language-selector {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     margin-top: 0.5rem;
   }
+
   .lang-btn {
     background: rgba(255,255,255,0.2);
     border: 1px solid rgba(255,255,255,0.3);
@@ -46,5 +49,7 @@
     background: #c1272d;
     border-color: #c1272d;
     transform: translateY(-2px);
-  }
+  } 
+
+
   

@@ -1,0 +1,218 @@
+
+/* src/components/sections/Educate.css */
+
+/* Palette variables */
+:root {
+    --bg-white: #ffffff;
+    --gray-light: #f6f7f9;
+    --gray: #e1e5e9;
+    --dark-blue: #102a43;
+    --garnet: #7a1620;
+    --text-muted: #4a5560;
+    --text-dark: #102028;
+}
+
+.educate-section {
+    margin-top: 2rem;
+}
+
+.educate-intro-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    color: var(--text-muted);
+}
+
+/* Old tab menu kept for backward compatibility */
+.tab-menu-container {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+}
+.tab-menu { display:flex; justify-content:center; flex-wrap:nowrap; gap:0.5rem; }
+.tab-button {
+    background: var(--gray-light);
+    color: var(--dark-blue);
+    border: 1px solid var(--gray);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all .2s ease;
+    font-weight: 500;
+}
+.tab-button.active { background: var(--dark-blue); color:#fff; }
+
+/* Disease toggle — reuses user class `button-ctb` if present */
+.disease-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.25rem 0 1.75rem 0;
+}
+.disease-toggle-button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--bg-white);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark-blue);
+    transition: all .22s ease;
+}
+.disease-toggle-button:hover { transform: translateY(-2px); }
+.disease-toggle-button.active {
+    background: linear-gradient(90deg, rgba(3, 32, 59, 0.06), rgba(122,22,32,0.04));
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    color: var(--garnet);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+
+/* Secciones apiladas a ancho completo */
+.educate-sections { width:100%; display:flex; flex-direction:column; gap: 0; transition: opacity .36s ease, transform .36s ease;}
+.edu-section {
+    padding: 2.4rem 4rem;
+    border-radius: 0;
+    color: var(--text-dark);
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+}
+.edu-section .section-inner {
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+}
+.section-header { display:flex; align-items:center; gap:0.8rem; margin-bottom:0.9rem; }
+.section-title { font-size:1.6rem; margin:0 0 0.25rem 0; font-weight:700; color:var(--dark-blue); }
+.section-content { font-size:1.1rem; line-height:1.65; color:var(--text-muted); }
+
+/* Background alternation using whites, greys, subtle stripes */
+.introduction { padding-left:2rem; padding-right:2rem; background: var(--gray-light); border-bottom:1px solid var(--gray); }
+.section-description { background: var(--bg-white); border-top:1px solid var(--gray); }
+.section-symptoms    { background: var(--gray-light); border-top:1px solid var(--gray); }
+.section-diagnosis   { background: var(--bg-white); border-top:1px solid var(--gray); }
+.section-treatments  { background: var(--gray-light); border-top:1px solid var(--gray); }
+.section-prognosis   { background: var(--bg-white); border-top:1px solid var(--gray); }
+.section-conclusion  { background: var(--gray-light); border-top:1px solid var(--gray); }
+
+/* Treatment cards grid */
+.treatment-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.treatment-card {
+    background: var(--bg-white);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.treatment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+.treatment-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin: 0 0 0.5rem 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.card-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Fade animation when disease changes */
+.educate-sections.animating { animation: fadeOutIn .42s ease-in-out; }
+@keyframes fadeOutIn {
+    0% { opacity: 0.15; transform: translateY(6px); }
+    50% { opacity: 0.95; transform: translateY(-3px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsiveness */
+@media (max-width: 920px) {
+    .edu-section .section-inner { padding: 0 1rem; }
+    .disease-toggle { justify-content: space-between; padding: 0 1rem; }
+}
+@media (max-width: 768px) {
+    .treatment-cards { flex-direction:column; }
+    .edu-section { padding: 1.1rem 0; }
+    .educate-section { padding: 0 1rem; margin: 1rem auto; }
+}
+
+
+/* BOTON DE DESCARGA */
+
+/* 1. Contenedor Flex para el Título y el Botón */
+.section-header-row {
+    display: flex;
+    justify-content: space-between; /* Mueve el botón a la derecha del título */
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+/* 2. Ajuste del Título (Para que Flexbox lo maneje) */
+.edu-section .section-title { 
+    font-size: 1.6rem; 
+    margin: 0; /* Elimina margen inferior del h3/section-title */
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+/* 3. Estilo del Botón de Descarga */
+.download-pdf-button {
+    background-color: var(--dark-blue, #003d6a);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que el botón se comprima en pantallas pequeñas */
+}
+
+.download-pdf-button:hover {
+    background-color: var(--garnet, #7a1620);
+}
+
+/* Estilos de color dinámicos basados en la enfermedad activa */
+/* Estos colores deben coincidir con los que usas en .disease-toggle-button.active */
+.download-btn-mogad {
+    background-color: #5aa4e4; /* Usar un color azul primario */
+}
+.download-btn-nmosd {
+    background-color: var(--garnet, #7a1620); /* Usar el color rojo/granate */
+}
+
+
+/* Adaptación Responsiva: Apilar el botón debajo del título en móvil */
+@media (max-width: 600px) {
+    .section-header-row {
+        flex-direction: column;
+        align-items: stretch; /* Ocupa todo el ancho */
+        gap: 0.5rem;
+    }
+    
+    .download-pdf-button {
+        justify-content: center; /* Centrar el texto del botón */
+    }
+}

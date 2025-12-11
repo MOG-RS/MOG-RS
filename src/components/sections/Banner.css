@@ -1,0 +1,96 @@
+/* src/components/sections/Banner.css */
+
+.hero-banner {
+    padding: 3rem 0; 
+    border-bottom: 1px solid #eee;
+    width: 100%;
+
+    /* 1. Base de color claro */
+    background-color: #edeef1;
+    
+    /* 2. Añadir un patron de puntos sutil (Geometría) */
+    background-image: radial-gradient(#09365d 1px, 
+        transparent 4px
+    );
+    background-size: 25px 25px; /* Espaciado del patrón */
+    background-blend-mode: soft-light; /* Mezcla suave con el color de fondo */
+    opacity: 8; /* Asegura que la mezcla se vea bien */
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap; 
+}
+
+.hero-left {
+    flex-grow: 1;
+    max-width: 60%;
+    text-align: left; 
+}
+
+.hero-logo {
+    margin-top: 1rem;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* Usamos una de tus variables globales de App.css */
+    color: var(--dark-blue, #003d6a); 
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-left: 4rem;
+}
+
+
+/* Lado Derecho: Imagen */
+.hero-right {
+    flex-grow: 1;
+    max-width: 40%;
+}
+
+.institute-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .hero-left, .hero-right {
+        max-width: 100%; 
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center; 
+    }
+    .hero-tagline {
+        font-size: 2rem;
+    }
+    .institute-image {
+        max-width: 80%;
+    }
+}

@@ -1,15 +1,101 @@
+/* src/components/sections/Contact.css */
+
 .contact-section {
-  padding: 2rem;
-  background-color: #f9f9f9;
-}
-
-.contact-content {
-  max-width: 700px;
+  max-width: 1200px; /* Aumentamos el max-width para las tarjetas */
   margin: 0 auto;
-  text-align: center;
+  padding: clamp(1.25rem, 2vw + 0.5rem, 3rem) 1rem;
+  background: var(--bg, #ffffff);
+  color: var(--text, #262626);
 }
 
+/* Cuadrícula para las 4 tarjetas (4 columnas en desktop) */
+.contact-grid {
+    width: 100%;
+    margin: 2rem auto 4rem auto; /* Más margen para separar de la tarjeta inferior */
+    
+    display: grid;
+    /* 4 columnas para desktop, se ajustan automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 2rem;
+    padding: 0 2rem; 
+}
+
+/* Estilo de la tarjeta individual  */
+.contact-card {
+    background: #f7f9fc;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%;
+    align-items: center;    
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de la foto para control de tamaño */
+.photo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem auto;
+    border-radius: 50%; /* CLAVE: Para hacer la foto redonda */
+    overflow: hidden;
+    border: 3px solid var(--primary-blue, #5aa4e4);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la foto cubra el círculo */
+}
+
+.person-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-blue, #003d6a);
+    margin: 0.8;
+}
+
+.person-title {
+    font-size: 0.95rem;
+    color: var(--accent-red, #c1272d);
+    margin-bottom: 0.8rem;
+}
+
+.person-email {
+    font-size: 0.9rem;
+    color: var(--dark-gray, #666);
+    text-decoration: none;
+    display: block; /* Para que ocupe su propia línea */
+    word-break: break-all;
+    margin-bottom: 1rem;
+}
+
+.person-email:hover {
+    text-decoration: underline;
+    color: var(--primary-blue, #5aa4e4);
+}
+
+.card-mini-logo {
+    width: 40px; /* Tamaño del logo de la empresa/red */
+    height: auto;
+    display: block; 
+    margin: auto auto 0 auto;
+    
+}
+
+/* Estilo para la Tarjeta de Contacto General*/
 .contact-info-box {
+  text-align: center;
+  font-size: large;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 700px;
   margin-top: 1.5rem;
   background: white;
   padding: 2rem;
@@ -17,68 +103,18 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info-box p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+/* Adaptación a dispositivos móviles */
+@media (max-width: 960px) {
+    .contact-grid {
+        /* En tabletas, se ven mejor 2 columnas */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
-.contact-info-box a {
-  color: #05448b;
-  text-decoration: none;
-}
-
-.contact-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #5aa4e4 0%, #007bba 100%);
-  color: white;
-  font-weight: bold;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.contact-button:hover {
-  background: #c1272d;
-}
-
-/* 中心对齐 + 统一排版 */
-.contact-info-box {
-  text-align: center;
-}
-
-.info-row {
-  margin: 0 0 1.25rem 0;
-}
-
-.info-title {
-  margin: 0 0 0.25rem 0;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #0b3d6a;
-}
-
-.info-name {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-/* 邮箱独占一行并水平居中；长地址可换行 */
-.info-email {
-  display: inline-block;          /* 居中且不占满整行 */
-  font-size: 1.05rem;
-  color: #05448b;
-  text-decoration: none;
-  word-break: break-all;          /* 手机端长邮箱自动换行 */
-  line-height: 1.6;
-}
-.info-email:hover { text-decoration: underline; }
-
-/* 手机端稍微紧凑一点 */
-@media (max-width: 768px) {
-  .contact-info-box { padding: 1.25rem; }
-  .info-title { font-size: 1.05rem; }
-  .info-email, .info-name { font-size: 1rem; }
+@media (max-width: 600px) {
+    .contact-grid {
+        /* Una columna en móviles */
+        grid-template-columns: 1fr;
+    }
 }
