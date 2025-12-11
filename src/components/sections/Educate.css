@@ -143,17 +143,6 @@
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsiveness */
-@media (max-width: 920px) {
-    .edu-section .section-inner { padding: 0 1rem; }
-    .disease-toggle { justify-content: space-between; padding: 0 1rem; }
-}
-@media (max-width: 768px) {
-    .treatment-cards { flex-direction:column; }
-    .edu-section { padding: 1.1rem 0; }
-    .educate-section { padding: 0 1rem; margin: 1rem auto; }
-}
-
 
 /* BOTON DE DESCARGA */
 
@@ -219,6 +208,6 @@
 
 @media (max-width: 960px) {
     .educate-section {
-        margin-top: 5rem;
+        margin-top: 10rem;
     }
 }

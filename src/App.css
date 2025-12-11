@@ -361,16 +361,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .section{
-    margin-top: 5rem;
-  }
-
-  .main-content {
-    padding: 5rem;
-  }
-}
-
 /* Highlights and Extra */
 .highlight {
   background-color: rgba(90, 164, 228, 0.1);

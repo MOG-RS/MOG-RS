@@ -230,3 +230,9 @@
   }
 }
 
+@media (max-width: 960px) {
+    .project-section {
+      margin-top: 10rem;
+    }
+}
+
