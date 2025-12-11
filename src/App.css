@@ -157,10 +157,6 @@ body {
 
   .menu-list{ display:grid; gap:8px; justify-items:center; }
 
-  .section {
-    margin-top: 3rem;
-  } 
-
 }
 
 /* ===== Main Content ===== */
@@ -172,7 +168,6 @@ body {
 }
 
 .section {
-  margin-top: 12rem;
   display: none;
   animation: fadeIn 0.5s ease-in;
 }
@@ -363,6 +358,16 @@ body {
 
   .main-content {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section{
+    margin-top: 5rem;
+  }
+
+  .main-content {
+    padding: 5rem;
   }
 }
 
