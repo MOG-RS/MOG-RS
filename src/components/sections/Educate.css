@@ -216,3 +216,9 @@
         justify-content: center; /* Centrar el texto del botón */
     }
 }
+
+@media (max-width: 960px) {
+    .educate-section {
+        margin-top: 5rem;
+    }
+}

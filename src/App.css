@@ -157,14 +157,10 @@ body {
 
   .menu-list{ display:grid; gap:8px; justify-items:center; }
 
-  .section-title {
-  font-size: 2.5rem;
-  color: var(--dark-blue);
-  margin-top:3rem;
-  margin-bottom: 1rem;
-  border-bottom: 3px solid var(--accent-red);
-  padding-bottom: 0.5rem;
-}
+  .section {
+    margin-top: 3rem;
+  } 
+
 }
 
 /* ===== Main Content ===== */
@@ -176,6 +172,7 @@ body {
 }
 
 .section {
+  margin-top: 12rem;
   display: none;
   animation: fadeIn 0.5s ease-in;
 }
