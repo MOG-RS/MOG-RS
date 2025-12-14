@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENMO: Entendiendo la Neuromielitis Óptica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6a95d1 0%, #8e7cc3 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: #6a95d1;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6a95d1 0%, #8e7cc3 100%);
+            border-radius: 10px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .content-text {
+            color: #555;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #6a95d1;
+        }
+
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .symptom-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .symptom-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .symptom-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .symptom-title {
+            color: #6a95d1;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .symptom-desc {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #6a95d1 0%, #8e7cc3 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6a95d1 0%, #8e7cc3 100%);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: #555;
+            flex: 1;
+        }
+
+        .treatment-blocks {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .treatment-block {
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .treatment-block h4 {
+            color: #6a95d1;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .treatment-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .treatment-block li {
+            padding: 8px 0;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .treatment-block li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6a95d1;
+            font-weight: bold;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tip-card {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-radius: 15px;
+        }
+
+        .tip-card .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .tip-title {
+            color: #6a95d1;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border-left: 4px solid #6a95d1;
+        }
+
+        .faq-question {
+            color: #6a95d1;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.15em;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        .final-message {
+            background: linear-gradient(135deg, #6a95d1 0%, #8e7cc3 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .who-affected {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .who-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .who-item-icon {
+            font-size: 2em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .symptoms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TENMO: Entendiendo la Neuromielitis Óptica</h1>
+            <p>Una guía clara y práctica para pacientes y familias</p>
+        </div>
+
+        <!-- ¿Qué es TENMO? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🧠</span>
+                ¿Qué es TENMO?
+            </h2>
+            <div class="content-text">
+                <p><strong>Enfermedad inflamatoria del sistema nervioso central</strong> que afecta principalmente nervio óptico y médula espinal.</p>
+            </div>
+            <div class="highlight-box">
+                <p>El sistema inmunitario produce anticuerpos AQP4, dañando la mielina y los axones.</p>
+                <p style="margin-top: 10px;">Provoca inflamación que puede afectar visión y movilidad.</p>
+            </div>
+        </div>
+
+        <!-- ¿A quién afecta? -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">👥</span>
+                ¿A quién afecta?
+            </h2>
+            <div class="who-affected">
+                <div class="who-item">
+                    <span class="who-item-icon">👩</span>
+                    <span>Aparece principalmente en adultos, con mayor frecuencia en mujeres.</span>
+                </div>
+                <div class="who-item">
+                    <span class="who-item-icon">🧬</span>
+                    <span>No es hereditaria ni contagiosa.</span>
+                </div>
+                <div class="who-item">
+                    <span class="who-item-icon">🔍</span>
+                    <span>La causa exacta no siempre se conoce; a veces se asocia a infecciones.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Síntomas principales -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚠️</span>
+                Síntomas principales
+            </h2>
+            <div class="symptoms-grid">
+                <div class="symptom-card">
+                    <div class="symptom-icon">👁️</div>
+                    <div class="symptom-title">Neuritis óptica</div>
+                    <div class="symptom-desc">Pérdida de visión, dolor ocular, visión borrosa o colores apagados.</div>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">🦴</div>
+                    <div class="symptom-title">Mielitis</div>
+                    <div class="symptom-desc">Debilidad en brazos o piernas, hormigueos, pérdida de sensibilidad, problemas urinarios o intestinales.</div>
+                </div>
+                <div class="symptom-card">
+                    <div class="symptom-icon">💢</div>
+                    <div class="symptom-title">Otros síntomas</div>
+                    <div class="symptom-desc">Dolor neuropático, fatiga, dificultad para caminar.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparación -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                Comparación con MOGAD y EM
+            </h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>TENMO</th>
+                            <th>MOGAD</th>
+                            <th>EM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Causa</strong></td>
+                            <td>Anticuerpos AQP4</td>
+                            <td>Anticuerpos MOG</td>
+                            <td>No anticuerpo específico</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Evolución</strong></td>
+                            <td>Brotes recurrentes; riesgo de secuelas</td>
+                            <td>Frecuentemente monofásicos</td>
+                            <td>Crónica, progresiva</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pronóstico</strong></td>
+                            <td>Riesgo de secuelas tras brotes</td>
+                            <td>Recuperación completa en muchos casos</td>
+                            <td>Curso variable, riesgo de discapacidad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Diagnóstico -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔬</span>
+                Diagnóstico
+            </h2>
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-icon">💉</div>
+                    <div class="step-text">Análisis de sangre para anticuerpos AQP4.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">🧲</div>
+                    <div class="step-text">Resonancia magnética cerebral, nervio óptico y médula espinal para evaluar inflamación.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">💧</div>
+                    <div class="step-text">Punción lumbar si es necesario.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">👨‍⚕️</div>
+                    <div class="step-text">Evaluación por neurólogo especializado en neuroinmunología.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tratamiento -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">💊</span>
+                Tratamiento
+            </h2>
+            <div class="treatment-blocks">
+                <div class="treatment-block">
+                    <h4>Durante brotes</h4>
+                    <ul>
+                        <li>Corticoides intravenosos</li>
+                        <li>Si no es suficiente: plasmaféresis o inmunoglobulinas IV</li>
+                    </ul>
+                </div>
+                <div class="treatment-block">
+                    <h4>Prevención de recaídas</h4>
+                    <ul>
+                        <li>Eculizumab, Ravulizumab, Inebilizumab, Satralizumab</li>
+                        <li>Rituximab o terapias inmunosupresoras clásicas</li>
+                        <li>Según valoración médica personalizada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pronóstico -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🌟</span>
+                Pronóstico
+            </h2>
+            <div class="highlight-box">
+                <p><strong>La enfermedad puede ser recurrente</strong> y los brotes pueden dejar secuelas.</p>
+                <p style="margin-top: 10px;">Con rehabilitación y tratamiento personalizado, se pueden minimizar los efectos a largo plazo y mantener calidad de vida.</p>
+            </div>
+        </div>
+
+        <!-- Consejos prácticos -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">💡</span>
+                Consejos prácticos
+            </h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="icon">🚨</div>
+                    <div class="tip-title">Reconocer señales</div>
+                    <p style="margin-top: 10px; color: #555; font-size: 0.95em;">Cambios visuales, debilidad, hormigueos, problemas urinarios</p>
+                </div>
+                <div class="tip-card">
+                    <div class="icon">📅</div>
+                    <div class="tip-title">Seguimiento</div>
+                    <p style="margin-top: 10px; color: #555; font-size: 0.95em;">Cumplir tratamiento y acudir a controles médicos</p>
+                </div>
+                <div class="tip-card">
+                    <div class="icon">🏃</div>
+                    <div class="tip-title">Estilo de vida</div>
+                    <p style="margin-top: 10px; color: #555; font-size: 0.95em;">Ejercicio adaptado, sueño adecuado, prevención de infecciones</p>
+                </div>
+                <div class="tip-card">
+                    <div class="icon">❤️</div>
+                    <div class="tip-title">Apoyo emocional</div>
+                    <p style="margin-top: 10px; color: #555; font-size: 0.95em;">Importante para bienestar y adaptación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas frecuentes -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">❓</span>
+                Preguntas frecuentes
+            </h2>
+            <div class="faq-item">
+                <div class="faq-question">¿TENMO dura para siempre?</div>
+                <div class="faq-answer">Es una enfermedad crónica, pero con tratamiento se puede manejar y vivir bien.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo hacer ejercicio?</div>
+                <div class="faq-answer">Sí, el ejercicio es seguro si se adapta a la capacidad del paciente.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo quedar embarazada?</div>
+                <div class="faq-answer">Con seguimiento especializado, la mayoría de los embarazos transcurren normalmente.</div>
+            </div>
+        </div>
+
+        <!-- Mensaje final -->
+        <div class="final-message">
+            <strong>TENMO puede ser desafiante, pero con diagnóstico, tratamiento y seguimiento adecuado, muchas personas mantienen una vida activa y satisfactoria. Informarse y participar en tu cuidado marca la diferencia.</strong>
+        </div>
+    </div>
+</body>
+</html>

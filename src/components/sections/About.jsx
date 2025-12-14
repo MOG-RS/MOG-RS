@@ -18,19 +18,19 @@ export default function About({ t }) {
         {/* Tarjeta 1: Misión */}
         <div className="info-card">
           <h3 className="about-card-title serif">{t('about-mission-title')}</h3>
-          <p className="card-text">{t('about-mission-text')}</p>
+          <p className="about-text">{t('about-mission-text')}</p>
         </div>
 
         {/* Tarjeta 2: Quiénes Somos */}
         <div className="info-card">
           <h3 className="about-card-title serif">{t('about-who-title')}</h3>
-          <p className="card-text">{t('about-who-text')}</p>
+          <p className="about-text">{t('about-who-text')}</p>
         </div>
 
         {/* Tarjeta 3: Qué Hacemos */}
         <div className="info-card">
           <h3 className="about-card-title serif">{t('about-what-title')}</h3>
-          <p className="card-text">{t('about-what-text')}</p>
+          <p className="about-text">{t('about-what-text')}</p>
         </div>
         
       </div>

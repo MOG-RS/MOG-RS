@@ -15,6 +15,7 @@
 .project-section {
   overflow: hidden;
   padding-top: 10rem;
+  margin-bottom: -3.5rem;
 }
 
 .introduction_project {
@@ -32,7 +33,7 @@
   background-color: var(--gray-light);
   border-top: 1px solid var(--gray);
   border-bottom: 1px solid var(--gray);
-  padding: 1rem 4rem 0rem 4rem;
+  padding: 1rem 4rem 1rem 4rem;
 }
 
 .reverse-layout {
@@ -57,18 +58,10 @@
 
 /* Aplicar color y estilo de fuente de Educate.css (section-title / section-title) */
 .project-text h3.subsection-title {
-  margin: 0;
+  margin-top: 1rem;
   font-size: 1.6rem; 
   font-weight: 700; 
   color: var(--dark-blue); 
-}
-
-.project-intro {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem; /* Consistencia con section-content de Educate */
-  line-height: 1.65;
-  color: var(--text-muted);
 }
 
 /* Subtítulos (Objetivo / Diseño) */
@@ -90,11 +83,11 @@
 }
 
 .project-text .markdown-container {
-    /* Aquí aplicamos los estilos de fuente, color y tamaño de Educate */
-    margin-bottom: 1rem; 
-    font-size: 1.1rem; /* Consistente con Educate */
-    line-height: 1.65;
-    color: var(--text-muted); /* Color de texto base */
+  /* Aquí aplicamos los estilos de fuente, color y tamaño de Educate */
+  margin-bottom: 1rem; 
+  font-size: 1.1rem; /* Consistente con Educate */
+  line-height: 1.65;
+  color: var(--text-muted); /* Color de texto base */
 }
 
 /* ------------------------------------------------- */
@@ -119,10 +112,6 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.12); 
   height: auto; 
   display: block; 
-}
-
-.project-text {
-  padding: 1rem;
 }
 
 /* --- Estilos de enlaces (Se mantienen, pero aseguramos la consistencia) --- */
@@ -184,4 +173,80 @@
 
 
 
+@media (max-width: 600px) {
+  .project-section {
+    padding-top: 0;
+    margin-top: -2rem;
+  }
 
+  .project-subsection {
+    display: flex; /* Aseguramos que es un contenedor flex */
+    flex-direction: column; /* Apila los hijos (imagen y texto) verticalmente */
+  }
+
+  .project-logo {
+    width: 60px; 
+    height: 60px;
+  }
+
+  .project-text h3.subsection-title {
+    margin: 1rem 0;
+    font-size: 1.2rem; 
+  }
+
+  .project-subtitle {
+    font-size: 1rem; 
+    margin-top: 1rem;
+  }
+
+  .project-text p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-text .markdown-container {
+    font-size: 0.9rem; 
+  }
+
+  .project-text {
+    order: 1; 
+    margin-bottom: 0rem; 
+  }
+
+  .project-image {
+    width: 300px;
+    order: 2; 
+    margin:0 0 1rem 0;
+    padding: 0; 
+    align-self: center;
+  }
+    
+  .project-image img {
+    height: auto;
+    display: block;
+    border-radius: 8px; 
+  }
+
+  .reverse-layout .project-image {
+    align-self: center;
+    margin:0 0 1rem 0;
+  }
+
+  .introduction_project,
+  .project-bg-white,
+  .project-bg-gray {
+    padding: 1rem 2rem;
+  }
+
+  .project-links-card {
+    margin: 3rem 1.5rem; 
+    padding: 2rem;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06); 
+    background-color: var(--bg-white);
+  }
+}

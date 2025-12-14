@@ -105,10 +105,21 @@
 /* Adaptación a dispositivos móviles */
 
 @media (max-width: 600px) {
+    .contact-section {
+        padding: 0rem 2rem;
+        margin-top: -1rem;
+    }
+
     .contact-grid {
         /* Una columna en móviles */
         grid-template-columns: 1fr;
+        padding-bottom: 0;
     }
+
+    .contact-info-box {
+  font-size: 1rem;
+  margin-top: 0rem;
+}
 }
 
 @media (max-width: 1200px) {

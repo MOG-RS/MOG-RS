@@ -38,10 +38,36 @@
 }
 
 /* Texto dentro de las tarjetas */
-.card-text {
+.about-text {
     font-size: 1.2rem;
     line-height: 1.6;
     color: var(--dark-gray, #666);
 }
 
 
+@media (max-width: 600px) {
+    .about-section {
+        margin-top: -1.5rem;
+        padding: 0 2rem ;
+        background: var(--bg, #ffffff);
+        color: var(--text, #262626);
+    }
+
+    .about-cards {
+        margin: 2rem -4rem 0 -4rem;
+    }
+
+    .about-card-title {
+        font-size: 1.3rem;
+        color: #0b3d6a;
+        margin-top: 0;
+        margin-bottom: 0.7rem;
+        font-weight: 700;
+    }
+
+    .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-gray, #666);
+}
+}

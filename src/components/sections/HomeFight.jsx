@@ -15,7 +15,7 @@ export default function HomeFight({ t, setCurrentSection }) {
     return (
         <section className="fight-section-wrapper">
             <div className="fight-section">
-                <h3 className="card-title">{t('fight-title')}</h3>
+                <h3 className="section-title fight-title serif">{t('fight-title')}</h3>
                 <div className="card-content">
                     <p>{t('fight-text')}</p>
                 </div>

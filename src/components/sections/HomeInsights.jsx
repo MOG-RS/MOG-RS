@@ -20,17 +20,15 @@ export default function HomeInsights({ t, setCurrentSection }) {
                 {/* Columna Izquierda (70%): Quiénes Somos */}
                 <div className="insights-column column-70">
                     <div className="insights-card who-we-are">
-                        <h3 className="card-title">{t('insights-title')}</h3>
-                        <div className="card-content">
-                            <p>{t('insights-text1')}</p>
-                            <p>{t('insights-text2')}</p>
-                        </div>
+                        <h3 className="section-title insights-title serif">{t('insights-title')}</h3>
+                            <p className="card-content">{t('insights-text1')}</p>
+                            <p className="card-content">{t('insights-text2')}</p>
                     </div>
                 </div>
 
                 {/* Columna Derecha (30%): Enlaces Rápidos (Placeholder) */}
                 <div className="insights-column column-30">
-                     <div className="insights-card logo">
+                     <div className="insights-card logo-insights">
                         <img src={logo2} alt="MOG-RS Logo" className="insights-logo" />
                             <div className="insights-buttons">
                                 {/* Botón 1: Projects */}

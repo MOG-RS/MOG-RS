@@ -87,3 +87,30 @@
         font-size: 2rem;
     }
 }
+
+/* Adaptación a móvil */
+@media (max-width: 600px){
+    .hero-content {
+        padding: 0 1rem;
+    }
+    .hero-left {
+        flex-grow: 1;
+        max-width: 100%;
+        text-align: left; 
+    }
+    .hero-logo {
+        margin-top: 2rem;
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        margin-left: 2em;
+    }
+
+    .hero-buttons {
+        margin-left: 0rem;
+        margin-bottom: 2rem;
+    }
+}

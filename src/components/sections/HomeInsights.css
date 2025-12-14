@@ -36,20 +36,23 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.card-title {
-    font-size: 2rem;
-    color: var(--dark-blue, #003d6a);
-    border-bottom: 3px solid var(--accent-red, #c1272d);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Merriweather', serif; /* Usando la fuente serif de tu proyecto */
+.insights-title{
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--accent-red);
+    display: inline-block; /* Para que el borde sea solo el ancho del texto */
 }
 
-.card-content p {
+
+.card-content{
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: var(--text-muted, #515a6a);
+}
+
+.insights-card.logo-insights {
+    margin-bottom: 3rem;
 }
 
 .insights-logo {
@@ -66,21 +69,16 @@
     margin-top: 1.5rem;
 }
 
-/* Estilos específicos para la tarjeta de la derecha (quick links) */
-.logo .card-title {
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-.logo p {
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-}
-
 
 
 /* Adaptación a dispositivos móviles (apilar columnas 100%) */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
+    .insights-section-wrapper {
+        margin: 1rem 1rem 0 1rem; /* Añade margen superior e inferior */
+        padding: 1rem 0 0 0;
+        overflow: hidden;
+    }
+
     .insights-layout {
         flex-direction: column;
         gap: 1.5rem;
@@ -92,11 +90,17 @@
         max-width: 100%;
     }
 
-    .insights-card {
-        padding: 1.5rem;
+    .insights-title{
+        font-size: 1.3rem;
+    }
+
+    .card-content{
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
     .insights-logo {
+        max-width: 250px;
         margin: 1.5rem auto; /* Centrar logo en móvil */
     }
     
@@ -122,3 +126,4 @@
         align-items: center;
     }
 }
+

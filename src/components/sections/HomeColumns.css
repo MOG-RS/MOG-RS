@@ -66,3 +66,39 @@
     background-color: #ccc; /* Color gris de la raya */
     margin: 0 1.5rem;
 }
+
+@media (max-width: 600px){
+    .column-section-wrapper {
+        padding-bottom: 1rem; 
+    }
+
+    .column-compare-title {
+        margin-bottom: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .two-column-layout {
+        display: block;
+        padding: 0;
+    }
+
+    .column-card {
+        padding: 1.2rem;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .column-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .column-text {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .column-card .ctb-button {
+        align-self: center; /* Alinea el botón a la izquierda de la columna */
+    }
+}

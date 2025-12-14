@@ -31,7 +31,7 @@ export default function HomeAssociations({ t }) {
     
     return (
         <section className="associations-section-wrapper">
-            <h2 className="section-title serif associations-main-title">{t('associations-title')}</h2>
+            <h2 className="section-title associations-main-title serif ">{t('associations-title')}</h2>
             
             <div className="associations-grid">
                 

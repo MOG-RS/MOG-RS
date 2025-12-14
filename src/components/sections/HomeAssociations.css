@@ -73,4 +73,15 @@
     font-weight: 500;
     margin-top: 0.5rem;
 }
-
+ 
+@media (max-width:600px) {
+    .associations-section-wrapper {
+        max-width: 1200px;
+        margin: 2rem;
+        padding: 0rem;
+        text-align: left;
+    }
+    .associations-main-title {
+        font-size:1.3rem;
+    }
+}

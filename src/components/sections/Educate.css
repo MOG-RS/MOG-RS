@@ -19,9 +19,17 @@
 .educate-intro-text {
     text-align: center;
     font-size: 1.2rem;
-    padding: 0 4rem 2rem 4rem;
+    padding: 1rem 4rem 2rem 4rem;
     color: var(--text-muted);
 }
+
+.educate-conclusion-text {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem 4rem 2rem 4rem;
+    color: var(--text-muted);
+}
+
 
 /* Old tab menu kept for backward compatibility */
 .tab-menu-container {
@@ -87,6 +95,7 @@
 }
 .section-header { display:flex; align-items:center; gap:0.8rem; margin-bottom:0.9rem; }
 .section-title { font-size:1.6rem; margin:0 0 0.25rem 0; font-weight:700; color:var(--dark-blue); }
+.section-title-edu { font-size:1.6rem; margin:0 0 0.25rem 0; font-weight:700; color:var(--dark-blue); }
 .section-content { font-size:1.1rem; line-height:1.65; color:var(--text-muted); }
 
 /* Background alternation using whites, greys, subtle stripes */
@@ -131,6 +140,10 @@
     color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
+}
+
+.associations-grid {
+    padding: 0 1.5rem;
 }
 
 /* Fade animation when disease changes */
@@ -191,5 +204,50 @@
 }
 
 
+@media (max-width:600px) {
+    .educate-section {
+        padding-top: 0;
+        margin-top: -3rem;
+    }
 
+    .introduction{
+        padding-top: 2rem;
+    }
+
+    .educate-intro-text {
+        text-align: left;
+        font-size: 1rem;
+        padding: 2rem 0 1rem 0;
+    }
+
+    .educate-conclusion-text {
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .edu-section {
+        padding: 2.4rem 1rem 1rem;
+    }
+    
+    .section-title-edu { font-size:1.3rem; margin:0 0 0.25rem 0; }
+    .section-content { font-size:0.9rem; }
+
+    .treatment-card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .associations-grid {
+        padding: 0 1.5rem;
+    }
+
+    .download-pdf-button {
+        font-size: 0.7rem;
+    }
+
+}
 

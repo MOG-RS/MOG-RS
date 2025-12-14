@@ -128,36 +128,11 @@ body {
   position: relative;
 }
 
-
 /* Mobile Menu */
 .mobile-menu-btn {
   display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--dark-blue);
-  cursor: pointer;
-  /*position:absolute; right:16px; top:50%; transform:translateY(-50%);
-  border:0; background:transparent; color:#fff; font-size:22px; display:none;*/
 }
 
-@media (max-width: 992px){
-  .mobile-menu-btn{ display:inline-flex; }
-
-  /* 抽屉覆盖整个视口（除去导航高度），列表纵向居中 */
-  .nav-menu{
-    position:fixed; inset:var(--nav-h) 0 0 0;
-    background:#0f4aa1;
-    transform:translateY(-8px); opacity:0; pointer-events:none;
-    transition:opacity .2s ease, transform .2s ease;
-    display:flex; flex-direction:column; justify-content:flex-start;
-    padding:12px 16px 24px;
-  }
-  .nav-menu.active{ opacity:1; transform:translateY(0); pointer-events:auto; }
-
-  .menu-list{ display:grid; gap:8px; justify-items:center; }
-
-}
 
 /*===== Main Content ===== */
 .main-content {
@@ -207,45 +182,8 @@ body {
   color: var(--dark-gray);
 }
 
-/* Team Grid */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
 
-.team-member {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-5px);
-}
-
-.member-name {
-  font-size: 1.3rem;
-  color: var(--dark-blue);
-  margin-bottom: 0.5rem;
-}
-
-.member-role {
-  color: var(--accent-red);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.member-contact {
-  color: var(--dark-gray);
-  font-size: 0.9rem;
-}
-
-/* CTA Buttons */
+/* Buttons */
 .cta-button {
   background: linear-gradient(135deg, var(--accent-red) 0%, #a51d23 100%);
   color: white;
@@ -286,6 +224,8 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+
 /* ===== Footer ===== */
 .footer {
   background: var(--dark-blue);
@@ -318,46 +258,123 @@ body {
   min-width: 120px;
 }
 
+
+
 /* ===== Responsive Design ===== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .full-fixed-header {
+    position: static; /* CAMBIO CLAVE: Usa 'static' para que siga el flujo normal del documento */
+    box-shadow: none; /* Opcional: Quitar la sombra si ya no es fijo */
+    z-index: 1; /* Opcional: Reducir el z-index */
+  }
+
   .header-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    display: flex;
+    flex-direction: row; /* Mantener horizontal para logo y botón de menú */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem; /* Añadir padding lateral en móvil */
   }
 
   .logo {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
+  .subtitle {
+    font-size: 0.7rem; /* Reducir de 0.9rem */
   }
+
+  .nav-menu,
+  .language-selector {
+      display: none;
+  }
+
+  /* 4. Mostrar el botón de menú de hamburguesa */
+  .mobile-menu-btn {
+    display: block; /* Debe estar visible en móvil */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    z-index: 1001; /* Asegurar que esté por encima de otros elementos */
+  }
+
+  .mobile-menu-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-container.is-open {
+    display: block; /* Hacemos visible el contenedor */
+    position: fixed; /* Lo fijamos a la pantalla */
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    z-index: 1000;
+    overflow-y: auto; /* Permitir scroll si hay muchos elementos */
+    }
 
   .nav-menu.active {
-    display: flex;
-  }
-
-  .mobile-menu-btn {
     display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 2rem; /* Espacio superior para el logo */
   }
 
-  .section-title {
-    font-size: 2rem;
+  .menu-list {
+    display: flex; /* Asegura el control con flexbox */
+    flex-direction: column; /* Apila los ítems verticalmente (Clave 1) */
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    gap: 0; /* Espacio vertical controlado por el margen del nav-item */
   }
 
-  .main-content {
-    padding: 1rem;
+  .nav-item {
+    margin: 1rem 0; /* Más espacio entre elementos */
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .nav-link {
+    display: flex;
+    /* Los ítems deben ir de izquierda a derecha (icono y texto) */
+    flex-direction: row; 
+    align-items: center;
+    justify-content: flex-start; /* Alinear a la izquierda del sidebar */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 0.9rem; /* Tamaño de fuente ajustado */
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    border-radius: 8px; /* Pequeños bordes para cada opción */
+  }
+
+  .language-selector { 
+    display: flex !important; /* Forzamos a que se muestre en el sidebar */
+    margin-top: 0.1rem;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .lang-btn {
+    padding: 0.4rem 0.8rem; /* Botones de idioma más pequeños */
+    font-size: 0.6rem;
+  }
+
+  .ctb-button {
+    padding: 1rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0;
   }
 }
+
 
 @media (max-width: 1200px) {
     .main-content {

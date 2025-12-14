@@ -2,23 +2,21 @@
 
 .fight-section-wrapper {
     width: 100%;
-    margin: 4rem auto; /* Añade margen superior e inferior */
+    margin: 0 auto; /* Añade margen superior e inferior */
     padding: 0 2rem;
     overflow: hidden;
     background-color: #edeef1;
 }
 
-.fight-section {
-    padding: 4rem;
+.fight-title {
+    margin-bottom: 1.5rem;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--accent-red, #c1272d);
+    display: inline-block;
 }
 
-.card-title {
-    font-size: 2rem;
-    color: var(--dark-blue, #003d6a);
-    border-bottom: 3px solid var(--accent-red, #c1272d);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Merriweather', serif; /* Usando la fuente serif de tu proyecto */
+.fight-section {
+    padding: 4rem;
 }
 
 .card-content p {
@@ -28,3 +26,25 @@
     color: var(--text-muted, #515a6a);
 }
 
+@media (max-width: 600px) {
+    .fight-section-wrapper {
+        margin: 0rem;
+        padding: 0;
+    }
+
+    .fight-section {
+        padding: 2.5rem;
+    }
+
+    .fight-title {
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
+
+    .fight-button {
+        align-items: center;
+    }
+}

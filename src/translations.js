@@ -28,7 +28,7 @@ export const translations = {
     "col-nmosd-text": "Neuromyelitis Optica Spectrum Disorder (NMOSD) is an autoimmune condition of the central nervous system in which the body produces antibodies that mainly attack the optic nerves and spinal cord. This can cause vision loss, weakness or paralysis, and changes in sensation. NMOSD can affect both adults and children and diagnosis requires a blood test that detects specific antibodies (AQP4-IgG).",
     "col-button-text": "Learn More",
     // HOME-INSIGHTS
-    "insights-title": "¿Who are we?",
+    "insights-title": "Who are we?",
     "insights-text1": "The MogNmo Network is a European research network focused on MOGAD and NMOSD, aiming to advance more personalized medicine for these rare disorders. Our approach combines scientific excellence with a strong patient-centered focus, engaging patients and families at every stage of the research.", 
     "insights-text2": "Our mission: Through collaboration among hospitals and universities across Europe and other parts of the world, we collect clinical data and biological samples to improve relapse prediction, optimize treatments, and ultimately enhance the quality of life for people living with MOGAD and NMOSD.",
     "insights-projects-btn": "Our Projects",

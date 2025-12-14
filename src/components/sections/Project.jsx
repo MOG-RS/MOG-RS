@@ -68,7 +68,7 @@ export default function Project({ t }) {
       </div>
 
       {/* Primer Proyecto (MogA-Dev) */}
-      <div className="project-section reverse-layout project-bg-white">
+      <div className="project-subsection reverse-layout project-bg-white">
         <div className="project-image">
           <img src={Proy1_foto} alt="MOG-RS Illustration" />
         </div>
@@ -77,7 +77,7 @@ export default function Project({ t }) {
             <img src={Proy1_logo} alt="MogA Logo" className="project-logo" />
             <h3 className="subsection-title serif">{t('project-mogrs-title')}</h3>
           </div>
-          <p className="project-intro">{t('project-mogrs-intro')}</p>
+          <p>{t('project-mogrs-intro')}</p>
           
           <h4 className="project-subtitle serif">{t('project-main-objective')}</h4>
           <p>{t('project-mogrs-objective-text')}</p>
@@ -88,7 +88,7 @@ export default function Project({ t }) {
       </div>
 
       {/* Segundo Proyecto (EV Biomarkers) - Imagen fija */}
-      <div className="project-section project-bg-gray" >
+      <div className="project-subsection project-bg-gray" >
         <div className="project-image">
           <img 
             src={Proy2_protocolo} 
@@ -122,7 +122,7 @@ export default function Project({ t }) {
       </div>
       
       {/* Tercer Proyecto (NMOSD Diagnosis) - Imagen fija */}
-      <div className="project-section reverse-layout project-bg-white">
+      <div className="project-subsection reverse-layout project-bg-white">
         <div className="project-image">
           <img 
             src={Proy3_protocolo} 

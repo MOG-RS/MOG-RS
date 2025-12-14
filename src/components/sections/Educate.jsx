@@ -27,7 +27,7 @@ const PDF_DOWNLOADS = {
     },
     es: {
         mogad: '/infografias/mogad_infografia.html',
-        nmosd: '/infografias/mogad_infografia.html',
+        nmosd: '/infografias/tenmo_infografia.html',
     },
 };
 // ------------------------------
@@ -164,7 +164,7 @@ export default function Educate({ t, currentLang }) {
                            
                             {/*  Nuevo Contenedor Flexbox para Título y Botón */}
                             <div className="section-header-row"> 
-                                <h3 className="section-title">{t(tab.labelKey)}</h3>
+                                <h3 className="section-title-edu ">{t(tab.labelKey)}</h3>
                                 
                                 {/* Botón de Descarga (Visible si la sección es 'description') */}
                                 {tab.id === 'description' && (
@@ -219,7 +219,7 @@ export default function Educate({ t, currentLang }) {
 
             <br></br>
 
-            <p className="educate-intro-text">{t('educate-learn-more')}</p>
+            <p className="educate-conclusion-text">{t('educate-learn-more')}</p>
             <div className="associations-grid">
                 
                 {associationsData.map((asoc, index) => (
