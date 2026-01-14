@@ -85,6 +85,15 @@ export default function Project({ t }) {
           <h4 className="project-subtitle serif">{t('project-study-design')}</h4>
            <p>{t('project-mogrs-design-text')}</p>
         </div>
+
+        <div className="project-actions">
+          <a 
+            href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-1')}`)}&body=${encodeURIComponent(`${t('participar-body-1')}`)}`}
+            className="ctb-button"
+          >
+            Collaborate →
+          </a>
+        </div>
       </div>
 
       {/* Segundo Proyecto (EV Biomarkers) - Imagen fija */}
@@ -118,6 +127,16 @@ export default function Project({ t }) {
                 {t('project-ev-design-text_md', { defaultValue: t('project-ev-design-text_md') })}
             </ReactMarkdown>
           </div>
+
+          <div className="project-actions">
+          <a 
+            href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-2')}`)}&body=${encodeURIComponent(`${t('participar-body-2')}`)}`}
+            className="ctb-button"
+          >
+            Collaborate →
+          </a>
+        </div>
+
         </div>
       </div>
       
@@ -154,6 +173,15 @@ export default function Project({ t }) {
                 {t('project-nmosd-design-text', { defaultValue: t('project-nmosd-design-text') })}
             </ReactMarkdown>
           </div>
+
+          <div className="project-actions">
+          <a 
+            href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-3')}`)}&body=${encodeURIComponent(`${t('participar-body-3')}`)}`}
+            className="ctb-button"
+          >
+            {t('collaborate-button')} →
+          </a>
+        </div>
         </div>
       </div>
 

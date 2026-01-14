@@ -11,19 +11,19 @@ import miniLogo from '../../asset/logo_peque.png';
 const teamContacts = [
     {
         name: "Juan Granja López",
-        title: "Network coordinator. Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital.",
+        title: "Network coordinator. Neurology. Neuroimmunology Unit, La Paz University Hospital.",
         email: "juan.granja.nrl@gmail.com",
         photo: juanPhoto,
     }, 
     {
         name: "Gabriel Torres Iglesias", 
-        title: "Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital. ",
+        title: "Neurology. Neuroimmunology Unit, La Paz University Hospital. ",
         email: "gabriel.torres@salud.madrid.org",
         photo: gabrielPhoto,
     },
     {
         name: "Inmaculada Puertas Muñoz",
-        title: "Neurology. Neuroimmunology Unit, La Paz Univeristy Hospital.",
+        title: "Neurology. Neuroimmunology Unit, La Paz University Hospital.",
         email: "inmaculada.puertas@salud.madrid.org",
         photo: inmaculadaPhoto,
     },
@@ -65,22 +65,36 @@ export default function Contact({ t }) {
                 ))}
             </div>
 
-            {/* 2. Tarjeta de Contacto General (Mantenida) */}
+            {/* 2. Tarjeta de Contacto General  */}
             <div className="contact-info-box">
               <p className="contact-description">{t('contact-description')}</p>
               <p>
                   <strong>{t('contact-coordinator')}:</strong>{' '}
                   Juan Granja López{' '}
-                  <a href="mailto:juan.granja@salud.madrid.org">juan.garcia@salud.madrid.org</a>
+                  <a href="mailto:juan.granja@salud.madrid.org">juan.granja@salud.madrid.org</a>
               </p>
 
               <a
                 type="button"
                 className="ctb-button"
-                onClick={() => { window.location.href = 'mailto:mog-rs@idipaz.es'; }}
+                onClick={() => { window.location.href = 'mailto:juan.granja.nrl@gmail.com'; }}
               >
                 {t('contact-button-text')}
               </a>
+            </div>
+
+            {/* 3. Tarjeta de Invitación a Unirse */}
+            <div className="contact-info-box">
+                <h2 className="mognmo-title">{t('mognmo-title')}</h2>
+                <p className="mognmo-text">{t('mognmo-text')}</p>
+                <a 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfL8mRq2DrUn_1lpce8V4iYhk-OagD9sixxzKAToFMYCGtiGg/viewform?usp=header" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="ctb-button"
+                >
+                    {t('join-network-button-text')}
+                </a>
             </div>
             
         </section>

@@ -21,7 +21,7 @@ export const translations = {
     "btn-contact": "Contact",
     "institute-photo-alt": "Company institutional photo",
     // HOME-EDUCATE
-    "home-compare-title": "What is MOGAD vs. NMOSD?",
+    "home-compare-title": "What is MOGAD & NMOSD?",
     "col-mogad-title": "What is MOG antibody disease?",
     "col-nmosd-title": "What is Neuromyelitis Optica?",
     "col-mogad-text": "Myelin Oligodendrocyte Glycoprotein Antibody-Associated Disease (MOGAD) is a rare neurological condition in which the immune system mistakenly attacks the myelin, the protective covering of nerve fibers in the brain, spinal cord, and optic nerves. This can cause episodes of inflammation such as optic neuritis (vision loss), myelitis (weakness or sensory changes), or encephalitis (inflammation of the brain). MOGAD is diagnosed through a blood test that measures MOG antibodies. Because this disorder is rare, it is often misdiagnosed or not diagnosed at all.",
@@ -71,6 +71,15 @@ export const translations = {
 
     "project-ev-link": "More Information",
 
+    "participar-subject-1": "Participate in MOG-RS Risk Score",
+    "participar-subject-2": "Participate in Extracellular Vesicle Biomarkers in MOGAD",
+    "participar-subject-3": "Participate in Improving NMOSD Diagnosis with Extracellular Vesicles",
+    "participar-body-1": "I am interested in participating in your study MOG-RS Risk Score Could you please provide me with more information regarding the study, the participation requirements, and any next steps?",
+    "participar-body-2": "I am interested in participating in your study Extracellular Vesicle Biomarkers in MOGAD Could you please provide me with more information regarding the study, the participation requirements, and any next steps?",
+    "participar-body-3": "I am interested in participating in your study Improving NMOSD Diagnosis with Extracellular Vesicles Could you please provide me with more information regarding the study, the participation requirements, and any next steps?",
+    "collaborate-button": "Collaborate",
+
+
     //EDUCATE 
     "educate-title": "Understand MOGAD & NMOSD", 
     "educate-intro": "Below you will find information about MOGAD and NMOSD, two rare neuroinflammatory diseases that affect the central nervous system.", 
@@ -111,6 +120,10 @@ export const translations = {
     "contact-description": "If you have any questions or need support, feel free to contact us.",
     "contact-button-text": "Contact Us",
     "contact-button-text": "Contact Us",
+    "location-map-title" : "Collaborating Institutions",
+    "mognmo-title": "Be Part of the MogNmo Network!",
+    "mognmo-text": "Join our European network dedicated to MOGAD and NMOSD. Whether you are a healthcare professional, researcher, patient, or family member, your contribution matters. Collaborate with experts, participate in research, and help improve care for patients worldwide.",
+    "join-network-button-text":"Join Now!",
   },
   es: {
     // HEADER
@@ -134,7 +147,7 @@ export const translations = {
     "btn-contact": "Contacto",
     "institute-photo-alt": "Foto institucional de la empresa",
     //HOME-EDUCATE
-    "home-compare-title": "¿Qué es MOGAD vs. TENMO?",
+    "home-compare-title": "¿Qué es MOGAD & TENMO?",
     "col-mogad-title": "¿Qué es la enfermedad por anticuerpos MOG?",
     "col-nmosd-title": "¿Qué es la Neuromielitis Óptica?",
     "col-mogad-text": "La enfermedad asociada a anticuerpos contra la glicoproteína de oligodendrocitos de la mielina (MOGAD) es un trastorno neurológico poco frecuente en el que el sistema inmunitario, por error, ataca la mielina, la capa que protege las fibras nerviosas del cerebro, la médula espinal y los nervios ópticos. Esto puede causar episodios de inflamación como neuritis óptica (pérdida de visión), mielitis (debilidad o pérdida de sensibilidad en el cuerpo) o encefalitis (afectación del cerebro). El diagnóstico de MOGAD se realiza mediante un análisis de sangre que detecta los anticuerpos MOG. Debido a que es un trastorno poco frecuente, con frecuencia se diagnostica de manera incorrecta o incluso no se diagnostica.",
@@ -184,6 +197,14 @@ export const translations = {
 
     "project-ev-link": "Más información",
 
+    "participar-subject-1": "Participa en la Escala de Riesgo MOG-RS",
+    "participar-subject-2": "Participa en Biomarcadores de Vesículas Extracelulares en MOGAD",
+    "participar-subject-3": "Participa en Mejora del Diagnóstico de TENMO con Vesículas Extracelulares",
+    "participar-body-1": "Estoy interesado en participar en su estudio Escala de Riesgo MOG-RS. ¿Podría proporcionarme más información sobre el estudio, los requisitos de participación y los próximos pasos a seguir?",
+    "participar-body-2": "Estoy interesado en participar en su estudio Biomarcadores de Vesículas Extracelulares en MOGAD. ¿Podría proporcionarme más información sobre el estudio, los requisitos de participación y los próximos pasos a seguir?",
+    "participar-body-3": "Estoy interesado en participar en su estudio Mejora del Diagnóstico de TENMO con Vesículas Extracelulares. ¿Podría proporcionarme más información sobre el estudio, los requisitos de participación y los próximos pasos a seguir?",
+    "collaborate-button": "Colaborar",
+
     //EDUCATE 
     "educate-title": "Conoce MOGAD y TENMO", 
     "educate-intro": "A continuación encontrarás información sobre MOGAD y TENMO, dos enfermedades neuroinflamatorias raras que afectan al sistema nervioso central.", 
@@ -223,7 +244,12 @@ export const translations = {
     "contact-coordinator": " Coordinador",
     "contact-description": "Si tiene alguna pregunta o necesita soporte, no dude en contactarnos.",
     "contact-button-text": "Contáctanos",
+    "location-map-title" : "Instituciones Colaboradoras",
+    "mognmo-title": "¡Forma parte de la Red MogNmo!",
+    "mognmo-text": "Únete a nuestra red europea dedicada a MOGAD y NMOSD. Seas profesional de la salud, investigador, paciente o familiar, tu participación es importante. Colabora con expertos, participa en investigaciones y ayuda a mejorar la atención de pacientes en todo el mundo.",
+    "join-network-button-text":"Únete",
   },
+
   fr: {
     "footer-text": "Réseau européen de stratification du risque dans la MOGAD.",
     "about-title": "À propos de nous",

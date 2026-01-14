@@ -1,6 +1,7 @@
 /* src/components/sections/Home.css */
 .home-section{
   padding-top: 7.5rem; 
+  margin-bottom: -4rem;
 }
 
 .slide {

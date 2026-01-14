@@ -5,7 +5,7 @@
     margin: 0 auto; /* Añade margen superior e inferior */
     padding: 0 2rem;
     overflow: hidden;
-    background-color: #edeef1;
+    background-color: var(--white, #ffffff);
 }
 
 .fight-title {

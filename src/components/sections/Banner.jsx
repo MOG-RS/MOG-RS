@@ -15,11 +15,11 @@ export default function Banner({ t, setCurrentSection }) {
           
           <h1 className="hero-tagline">{t('hero-tagline')}</h1> 
           
-          <div className="hero-buttons">
+          {/*<div className="hero-buttons">
             <button type="button"className="ctb-button" onClick={() => {setCurrentSection('about');}}>{t('btn-about')}</button>
             <button type="button"className="ctb-button" onClick={() => {setCurrentSection('educate');}}>{t('btn-educate')}</button>
             <button type="button"className="ctb-button" onClick={() => {setCurrentSection('contact');}}>{t('btn-contact')}</button>
-          </div>
+          </div>*/}
         </div>
 
         {/* Lado Derecho: Imagen de la Empresa 

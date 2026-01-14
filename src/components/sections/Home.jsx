@@ -18,7 +18,7 @@ const images = [
   },
   {
     src: require('../../asset/slides3.png'),
-    text: 'Driving Innovation in MOGAD Research'
+    text: 'Driving Innovation in MOGAD and NMOSD Research'
   },
   {
     src: require('../../asset/slides4.png'),
@@ -26,7 +26,7 @@ const images = [
   },
   {
     src: require('../../asset/slides5.png'),
-    text: 'Improving Long-Term Outcomes for MOGAD Patients'
+    text: 'Improving Long-Term Outcomes for MOGAD and NMOSD Patients'
   }
 ];
 
@@ -59,8 +59,8 @@ export default function Home({ t, setCurrentSection}) {
         ))}
       </section>
 
-      <HomeColumns t={t} setCurrentSection={setCurrentSection}/>
       <HomeInsights t={t} setCurrentSection={setCurrentSection}/>
+      <HomeColumns t={t} setCurrentSection={setCurrentSection}/>
       <HomeFight t={t} setCurrentSection={setCurrentSection}/>
       <HomeAssociations t={t} setCurrentSection={setCurrentSection}/>
     </section>
