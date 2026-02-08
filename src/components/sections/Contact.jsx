@@ -1,11 +1,18 @@
 import React from 'react';
 import './Contact.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import juanPhoto from '../../asset/juan.jpeg'; 
 import gabrielPhoto from '../../asset/gabriel.png';
 import inmaculadaPhoto from '../../asset/inmaculada.png';
 import lauraPhoto from '../../asset/laura.png';
+import mireyaPhoto from '../../asset/mireya.jpeg';
 import miniLogo from '../../asset/logo_peque.png'; 
+
 
 // --- ESTRUCTURA DE DATOS DE CONTACTOS ---
 const teamContacts = [
@@ -33,6 +40,12 @@ const teamContacts = [
         email: "oteroortega.l@gmail.com",
         photo: lauraPhoto,
     },
+    {
+        name: "Mireya Fernandez Fournier",
+        title: "Neurology. Neuroimmunology Unit, La Paz University Hospital.",
+        email: "fernandezfournier@hotmail.com",
+        photo: mireyaPhoto,
+    },
 ];
 // ----------------------------------------
 
@@ -40,29 +53,37 @@ export default function Contact({ t }) {
     return (
         <section id="contact" className="section active contact-section">
             <h2 className="section-title serif">{t('contact-title')}</h2>
-            
-            {/* 1. Cuadrícula de Tarjetas de Contacto */}
-            <div className="contact-grid">
-                {teamContacts.map((person, index) => (
-                    <div key={index} className="contact-card">
-                        {/* Foto Redonda */}
-                        <div className="photo-wrapper">
+            <div className="contact-slider-container">
+                <Swiper
+                    modules={[Pagination, Navigation]}
+                    spaceBetween={20} // Espacio entre tarjetas
+                    slidesPerView={1} // Por defecto (móvil)
+                    navigation // Flechas laterales
+                    breakpoints={{
+                        640: { slidesPerView: 2 },
+                        1024: { slidesPerView: 4 }, // 4 tarjetas en escritorio
+                    }}
+                    className="contact-swiper"
+                    >
+                    {teamContacts.map((person, index) => (
+                        <SwiperSlide key={index}>
+                        <div className="contact-card">
+                            <div className="photo-wrapper">
                             <img src={person.photo} alt={person.name} className="contact-photo" />
-                        </div>
-                        
-                        {/* Información */}
-                        <h3 className="person-name">{person.name}</h3>
-                        <p className="person-title">{person.title}</p>
-                        
-                        {/* Correo (clicable) */}
-                        <a href={`mailto:${person.email}`} className="person-email">
+                            </div>
+                            
+                            <h3 className="person-name">{person.name}</h3>
+                            <p className="person-title">{person.title}</p>
+                            
+                            <a href={`mailto:${person.email}`} className="person-email">
                             {person.email}
-                        </a>
-                        
-                        {/* Logo Pequeño Debajo */}
-                        <img src={miniLogo} alt="Logo" className="card-mini-logo" />
-                    </div>
-                ))}
+                            </a>
+                            
+                            <img src={miniLogo} alt="Logo" className="card-mini-logo" />
+                        </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
 
             {/* 2. Tarjeta de Contacto General  */}
@@ -86,7 +107,7 @@ export default function Contact({ t }) {
             {/* 3. Tarjeta de Invitación a Unirse */}
             <div className="contact-info-box">
                 <h2 className="mognmo-title">{t('mognmo-title')}</h2>
-                <p className="mognmo-text">{t('mognmo-text')}</p>
+                <p className="contact-description">{t('mognmo-text')}</p>
                 <a 
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfL8mRq2DrUn_1lpce8V4iYhk-OagD9sixxzKAToFMYCGtiGg/viewform?usp=header" 
                     target="_blank" 

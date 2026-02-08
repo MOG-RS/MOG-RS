@@ -11,12 +11,9 @@ import Proy1_foto from '../../asset/MogADev.png';
 
 import Proy2_logo from '../../asset/logo_persevere_MOG.jpg';
 import Proy2_protocolo from '../../asset/protocolo_persevere_MOG.png'; 
-import Proy2_foto from '../../asset/EEcell.jpeg';
-
 
 import Proy3_logo from '../../asset/logo_AQP4_EV.jpg';
 import Proy3_protocolo from '../../asset/protocolo_AQP4_EV.png'; 
-import Proy3_foto from '../../asset/foto_AQP4_EV.png';
 
 
 export default function Project({ t }) {
@@ -84,15 +81,14 @@ export default function Project({ t }) {
 
           <h4 className="project-subtitle serif">{t('project-study-design')}</h4>
            <p>{t('project-mogrs-design-text')}</p>
-        </div>
 
-        <div className="project-actions">
           <a 
             href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-1')}`)}&body=${encodeURIComponent(`${t('participar-body-1')}`)}`}
             className="ctb-button"
           >
             Collaborate →
           </a>
+          
         </div>
       </div>
 
@@ -128,14 +124,12 @@ export default function Project({ t }) {
             </ReactMarkdown>
           </div>
 
-          <div className="project-actions">
           <a 
             href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-2')}`)}&body=${encodeURIComponent(`${t('participar-body-2')}`)}`}
             className="ctb-button"
           >
             Collaborate →
           </a>
-        </div>
 
         </div>
       </div>
@@ -174,14 +168,12 @@ export default function Project({ t }) {
             </ReactMarkdown>
           </div>
 
-          <div className="project-actions">
           <a 
             href={`mailto:juan.granja.nrl@gmail.com?subject=${encodeURIComponent(`${t('participar-subject-3')}`)}&body=${encodeURIComponent(`${t('participar-body-3')}`)}`}
             className="ctb-button"
           >
             {t('collaborate-button')} →
           </a>
-        </div>
         </div>
       </div>
 

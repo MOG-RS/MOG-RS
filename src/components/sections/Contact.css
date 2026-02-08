@@ -7,16 +7,34 @@
   color: var(--text, #262626);
 }
 
-/* Cuadrícula para las 4 tarjetas (4 columnas en desktop) */
-.contact-grid {
+:root {
+  --swiper-navigation-color: #352589; /* Gris */
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.swiper-button-next{
+    right: -5px !important;
+}
+
+.contact-slider-container {
     width: 100%;
-    margin: 2rem auto 4rem auto; /* Más margen para separar de la tarjeta inferior */
-    
-    display: grid;
-    /* 4 columnas para desktop, se ajustan automáticamente */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 2rem;
-    padding: 0 2rem; 
+    padding: 0 40px; 
+}
+
+.contact-swiper {
+  overflow: hidden !important; 
+  padding: 30px !important; 
+}
+
+
+.swiper-slide {
+  height: auto !important;
+  display: flex; /* Permite que el hijo se estire */
 }
 
 /* Estilo de la tarjeta individual  */
@@ -143,7 +161,7 @@
 
     .contact-info-box {
         font-size: 1rem;
-        margin-top: 0rem;
+        margin-top: 1rem;
     }
 }
 

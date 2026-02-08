@@ -79,8 +79,7 @@
 @media (max-width:600px) {
     .associations-section-wrapper {
         max-width: 1200px;
-        margin: 2rem;
-        padding: 0rem;
+        margin-bottom: 1rem;
         text-align: left;
     }
     .associations-main-title {
